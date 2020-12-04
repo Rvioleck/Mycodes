@@ -3,7 +3,9 @@ package Examine_Pro;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-public class Paper2Java003 extends JApplet implements ActionListener {
+
+//*********Found********
+public class Paper2Java003 extends JApplet implements ActionListener { // ActionListener
     //扔两个骰子的游戏开始状态
     final int WON = 0, LOST = 1, CONTINUE = 2;
     //程序其他变量初始化
@@ -46,7 +48,7 @@ public class Paper2Java003 extends JApplet implements ActionListener {
 
         roll = new JButton( "旋转骰子" );
 //*********Found**********
-        roll.addActionListener( this );
+        roll.addActionListener( this ); // this
         c.add( roll );
     }
     //按钮压下时,调用的方法
@@ -103,7 +105,7 @@ public class Paper2Java003 extends JApplet implements ActionListener {
         firstDie.setText( Integer.toString( die1 ) );
         secondDie.setText( Integer.toString( die2 ) );
 //*********Found**********
-        sum.setText( Integer.toString( workSum ) );
+        sum.setText( Integer.toString( workSum ) ); // workSum
         return workSum;
     }
 }

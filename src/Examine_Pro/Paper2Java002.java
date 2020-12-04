@@ -3,14 +3,14 @@ package Examine_Pro;
 public class Paper2Java002 {
     public static void main(String[] args) {
         //*********Found********
-        int[][] aMatrix = new int[6][];
+        int[][] aMatrix = new int[6][]; // new int[6]
 
         int i = 0;
         int j = 0;
         int k = 0;
 
         //*********Found********
-        for ( i = 0; i < aMatrix.length; i++) {
+        for ( i = 0; i < aMatrix.length; i++) { // aMatrix.length
 
             aMatrix[i] = new int[j + 1];  //创建数组。
 

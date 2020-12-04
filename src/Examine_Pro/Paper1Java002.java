@@ -6,9 +6,9 @@ public class Paper1Java002 {
         byte buf[] = new byte[5];
         int len= 0 ,c1 = 0,c2=0;
         //*********Found**********
-        try{
+        try{ // try
             //*********Found**********
-            FileInputStream in = new FileInputStream("test.txt");
+            FileInputStream in = new FileInputStream("test.txt"); // new FileInputStream
             while((len =in.read(buf,0,5))>0){
                 for(int i = 0; i < len;i++)
                     if(buf[i]>= '0' && buf[i] <= '9'){

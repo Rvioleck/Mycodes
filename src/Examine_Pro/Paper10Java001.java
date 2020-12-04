@@ -27,7 +27,7 @@ class TT
     public TT(String s)
     {
         //*********Found**********
-        this();
+        this(); // this()
         System.out.println("我是"+s);
     }
 }
