@@ -5,27 +5,31 @@ import org.junit.Test;
 import java.util.HashMap;
 
 public class RomanToInt {
+    public int roman(char ch){
+        switch (ch){
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            default: return 0;
+        }
+    }
+
     public int romanToInt(String s){
-        HashMap<Character, Integer> map = new HashMap();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
         char[] chars = s.toCharArray();
         int len = chars.length;
-        int result = map.get(chars[len - 1]);
+        int result = roman(chars[len - 1]);
         for (int i = len - 2; i >= 0 ; i--) {
-            if (map.get(chars[i]) < map.get(chars[i + 1])){
-                result -= map.get(chars[i]);
+            if (roman(chars[i]) < roman(chars[i + 1])){
+                result -= roman(chars[i]);
             }
             else
-                result += map.get(chars[i]);
+                result += roman(chars[i]);
         }
         return result;
-
     }
 
     @Test

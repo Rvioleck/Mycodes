@@ -20,30 +20,29 @@ public class RemoveDuplicates {
         return sb.toString();
     }
 
-//    public String removeDuplicates2(String S){
-//        Stack<Character> stack = new Stack();
-//        for (int i = 0; i < S.length(); i++) {
-//            stack.push(S.charAt(i));
-//            if (stack.size()>=2){
-//                char peek1 = stack.pop();
-//                char peek2 = stack.pop();
-//                if ( peek1 != peek2){
-//                    stack.push(peek2);
-//                    stack.push(peek1);
-//                }
-//            }
-//        }
-//        StringBuilder result = new StringBuilder();
-//        for (char c:
-//             stack) {
-//            result.append(c);
-//        }
-//        return new String(result);
-//    }
+    public int removeDuplicates(int[] nums) {
+        if (nums.length <= 1)
+            return nums.length;
+        int removeNum = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i+1] == nums[i]){
+                ++removeNum;
+            }
+            else
+                nums[i+1 - removeNum] = nums[i+1];
+        }
+        return nums.length - removeNum;
+    }
+
+
 
     @Test
     public void test(){
-        String s = "abbaca";
-        System.out.println(removeDuplicates(s));
+//        String s = "abbaca";
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        System.out.println(removeDuplicates(nums));
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i]+" ");
+        }
     }
 }

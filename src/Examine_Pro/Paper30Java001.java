@@ -12,7 +12,7 @@ public class Paper30Java001 {
             case 'b': System.out.print("b");
             case 'c': System.out.print("c");break;
             //*********Found**********
-            default: System.out.print("abc"); // default
+            case 'd': System.out.print("abc"); // case 'd'
         }
     }
 }
