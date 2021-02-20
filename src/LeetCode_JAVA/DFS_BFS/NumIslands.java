@@ -18,33 +18,24 @@ public class NumIslands {
     }
 
     private void bfs(char[][] grid, int x, int y){
-        grid[x][y] = '0';
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{x, y});
         while (!queue.isEmpty()){
             int[] point = queue.remove();
             int i = point[0], j = point[1];
-            if (i + 1 < m && grid[i + 1][j] == '1'){
-                queue.offer(new int[]{i + 1, j});
-                grid[i + 1][j] = '0';
-            }
-            if (i - 1 >= 0 && grid[i - 1][j] == '1'){
-                queue.offer(new int[]{i - 1, j});
-                grid[i - 1][j] = '0';
-            }
-            if (j + 1 < n && grid[i][j + 1] == '1'){
-                queue.offer(new int[]{i, j + 1});
-                grid[i][j + 1] = '0';
-            }
-            if (j - 1 >= 0 && grid[i][j - 1] == '1'){
-                queue.offer(new int[]{i, j - 1});
-                grid[i][j - 1] = '0';
-            }
+            if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] != '1') continue;
+            grid[i][j] = '0';
+            queue.offer(new int[]{i + 1, j});
+            queue.offer(new int[]{i - 1, j});
+            queue.offer(new int[]{i, j + 1});
+            queue.offer(new int[]{i, j - 1});
         }
     }
 
     public int numIslands2(char[][] grid) {
         m = grid.length;
+        if (m == 0)
+            return 0;
         n = grid[0].length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {

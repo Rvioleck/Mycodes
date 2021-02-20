@@ -3,7 +3,7 @@ package LeetCode_JAVA;
 import org.junit.Test;
 
 public class ClimbStairs {
-    public int climbstairs(int n){
+    public int climbStairs(int n){
         int[] dp = new int[n+1];
         dp[0] = 1;
         dp[1] = 1;
@@ -15,6 +15,6 @@ public class ClimbStairs {
 
     @Test
     public void test(){
-        System.out.println(climbstairs(2));
+        System.out.println(climbStairs(2));
     }
 }
