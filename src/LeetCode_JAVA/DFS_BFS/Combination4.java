@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.DFS_BFS;
 
 public class Combination4 {
 
