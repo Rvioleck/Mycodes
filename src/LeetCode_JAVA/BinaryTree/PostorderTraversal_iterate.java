@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class PostorderTraversal_iterate {
-    private List<Integer> res = new ArrayList<>();
+    private final List<Integer> res = new ArrayList<>();
 
     public List<Integer> postOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
@@ -28,5 +28,10 @@ public class PostorderTraversal_iterate {
             }
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        TreeNode t1 = TreeNode.create("[3,9,20,null,null,15,7]");
+        System.out.println(new PostorderTraversal_iterate().postOrderTraversal(t1));
     }
 }

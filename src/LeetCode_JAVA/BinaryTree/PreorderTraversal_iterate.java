@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Stack;
 
 public class PreorderTraversal_iterate {
-    private List<Integer> res = new ArrayList<>();
+    private final List<Integer> res = new ArrayList<>();
 
     public List<Integer> preOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode node = new TreeNode();
-        while (node != null && !stack.isEmpty()) {
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
             if (node != null) {
                 res.add(node.val);
                 stack.push(node);
@@ -21,6 +21,11 @@ public class PreorderTraversal_iterate {
             }
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        TreeNode t1 = TreeNode.create("[3,9,20,null,null,15,7]");
+        System.out.println(new PreorderTraversal_iterate().preOrderTraversal(t1));
     }
 
 }

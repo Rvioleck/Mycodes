@@ -2,10 +2,9 @@ package LeetCode_JAVA.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class PostorderTraversal {
-    private List<Integer> res = new ArrayList<>();
+    private final List<Integer> res = new ArrayList<>();
 
     public List<Integer> postorderTraversal(TreeNode root) {
         if (root != null) {
@@ -14,6 +13,11 @@ public class PostorderTraversal {
             res.add(root.val);
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        TreeNode t1 = TreeNode.create("[3,9,20,null,null,15,7]");
+        System.out.println(new PostorderTraversal().postorderTraversal(t1));
     }
 
 }

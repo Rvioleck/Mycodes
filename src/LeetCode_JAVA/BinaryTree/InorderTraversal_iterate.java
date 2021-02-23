@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class InorderTraversal_iterate {
-    private List<Integer> res = new ArrayList<>();
+    private final List<Integer> res = new ArrayList<>();
 
     public List<Integer> inOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
@@ -21,6 +21,11 @@ public class InorderTraversal_iterate {
             }
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        TreeNode t1 = TreeNode.create("[3,9,20,null,null,15,7]");
+        System.out.println(new InorderTraversal_iterate().inOrderTraversal(t1));
     }
 
 }
