@@ -8,7 +8,7 @@ public class ReversePrint {
 
     public int[] reversePrint(ListNode head) {
         List<Integer> list = new ArrayList<>();
-        while (head != null){
+        while (head != null) {
             list.add(0, head.val);
             head = head.next;
         }

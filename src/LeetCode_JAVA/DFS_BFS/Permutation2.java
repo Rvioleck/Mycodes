@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Permutation2 {
 
-    private void dfs(String S, StringBuffer path, List<String> res, boolean[] vis){
-        if (path.length() == S.length()){
-            res.add(new String(path)) ;
+    private void dfs(String S, StringBuffer path, List<String> res, boolean[] vis) {
+        if (path.length() == S.length()) {
+            res.add(new String(path));
             return;
         }
         for (int i = 0; i < S.length(); i++) {
@@ -36,8 +36,8 @@ public class Permutation2 {
 
     public static void main(String[] args) {
         String[] res = new Permutation2().permutation("aba");
-        for (String s:
-             res) {
+        for (String s :
+                res) {
             System.out.println(s);
         }
     }

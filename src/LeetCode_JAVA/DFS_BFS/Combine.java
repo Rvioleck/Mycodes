@@ -6,8 +6,8 @@ import java.util.List;
 public class Combine {
     private int n, k;
 
-    private void dfs(List<List<Integer>> res, List<Integer> combination, int index){
-        if (combination.size() == k){
+    private void dfs(List<List<Integer>> res, List<Integer> combination, int index) {
+        if (combination.size() == k) {
             res.add(new ArrayList<>(combination));
             return;
         }
@@ -17,6 +17,7 @@ public class Combine {
             combination.remove(combination.size() - 1);
         }
     }
+
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
         this.n = n;

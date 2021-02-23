@@ -14,7 +14,7 @@ public class AddBinary {
             if (b.charAt(i) == '1')
                 bnum += Math.pow(2, b.length() - i - 1);
         }
-        String result = Integer.toBinaryString(anum+bnum);
+        String result = Integer.toBinaryString(anum + bnum);
         if (result.length() > 32)
             return result.substring(0, 33);
         else
@@ -22,7 +22,7 @@ public class AddBinary {
     }
 
     @Test
-    public void test(){
+    public void test() {
         String a = "1010";
         String b = "1011";
         System.out.println(addBinary(a, b));

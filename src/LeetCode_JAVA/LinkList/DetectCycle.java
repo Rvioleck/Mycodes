@@ -4,16 +4,16 @@ public class DetectCycle {
 
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head, fast = head;
-        while (slow != null && fast != null){
+        while (slow != null && fast != null) {
             fast = fast.next;
-            if (fast == null){
+            if (fast == null) {
                 return null;
             }
             fast = fast.next;
             slow = slow.next;
-            if (slow == fast){
+            if (slow == fast) {
                 ListNode p = head;
-                while (p != slow){
+                while (p != slow) {
                     p = p.next;
                     slow = slow.next;
                 }

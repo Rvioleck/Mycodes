@@ -5,9 +5,9 @@ public class HasCycle {
 
     public boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head;
-        while (slow != null && fast != null){
+        while (slow != null && fast != null) {
             fast = fast.next;
-            if (slow == fast){
+            if (slow == fast) {
                 return true;
             }
             if (fast != null)

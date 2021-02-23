@@ -6,16 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class YanghuiDeltaI {
-    public List<List<Integer>> generate(int numRows){
+    public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         for (int i = 0; i < numRows; i++) {
             List<Integer> oneRow = new ArrayList<Integer>();
             for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == i){
+                if (j == 0 || j == i) {
                     oneRow.add(1);
-                }
-                else{
-                    oneRow.add(result.get(i-1).get(j-1) + result.get(i-1).get(j));
+                } else {
+                    oneRow.add(result.get(i - 1).get(j - 1) + result.get(i - 1).get(j));
                 }
             }
             result.add(oneRow);
@@ -24,7 +23,7 @@ public class YanghuiDeltaI {
     }
 
     @Test
-    public void test(){
+    public void test() {
         int numRows = 5;
         YanghuiDeltaI obj = new YanghuiDeltaI();
         List<List<Integer>> result = obj.generate(numRows);

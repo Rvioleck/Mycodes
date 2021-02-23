@@ -2,10 +2,8 @@ package LeetCode_JAVA;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-
 public class IntToRoman {
-    public String intToRoman(int num){
+    public String intToRoman(int num) {
 //        HashMap<Integer, String> map = new HashMap<>();
 //        map.put(1, "I");
 //        map.put(4, "IV");
@@ -23,8 +21,8 @@ public class IntToRoman {
         int[] key = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
         String[] value = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
         StringBuilder result = new StringBuilder();
-        for (int i = key.length - 1; i >= 0 ; i--) {
-            while (num >= key[i]){
+        for (int i = key.length - 1; i >= 0; i--) {
+            while (num >= key[i]) {
                 num -= key[i];
                 result.append(value[i]);
             }
@@ -33,7 +31,7 @@ public class IntToRoman {
     }
 
     @Test
-    public void test(){
+    public void test() {
         int x = 58;
         System.out.println(intToRoman(x));
     }

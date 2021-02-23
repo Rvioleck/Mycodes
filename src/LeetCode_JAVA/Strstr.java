@@ -8,7 +8,7 @@ public class Strstr {
             return 0;
         int len1 = haystack.length();
         int len2 = needle.length();
-        for(int i=0; i< len1 - len2 + 1; i++){
+        for (int i = 0; i < len1 - len2 + 1; i++) {
             if (haystack.substring(i, i + len2).equals(needle))
                 return i;
         }
@@ -17,7 +17,7 @@ public class Strstr {
 
 
     @Test
-    public void test(){
+    public void test() {
         String haystack = "a";
         String needle = "a";
         System.out.println(strStr(haystack, needle));

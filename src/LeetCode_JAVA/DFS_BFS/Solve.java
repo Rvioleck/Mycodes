@@ -6,26 +6,26 @@ import java.util.Queue;
 public class Solve {
     private int m, n;
 
-    private void bfs(char[][] board, int x, int y, char ch){
+    private void bfs(char[][] board, int x, int y, char ch) {
         board[x][y] = ch;
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{x, y});
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int[] point = queue.remove();
             int i = point[0], j = point[1];
-            if (i - 1 >= 0 && board[i - 1][j] == 'O'){
+            if (i - 1 >= 0 && board[i - 1][j] == 'O') {
                 board[i - 1][j] = ch;
                 queue.offer(new int[]{i - 1, j});
             }
-            if (i + 1 < m && board[i + 1][j] == 'O'){
+            if (i + 1 < m && board[i + 1][j] == 'O') {
                 board[i + 1][j] = ch;
                 queue.offer(new int[]{i + 1, j});
             }
-            if (j - 1 >= 0 && board[i][j - 1] == 'O'){
+            if (j - 1 >= 0 && board[i][j - 1] == 'O') {
                 board[i][j - 1] = ch;
                 queue.offer(new int[]{i, j - 1});
             }
-            if (j + 1 < n && board[i][j + 1] == 'O'){
+            if (j + 1 < n && board[i][j + 1] == 'O') {
                 board[i][j + 1] = ch;
                 queue.offer(new int[]{i, j + 1});
             }
@@ -48,7 +48,7 @@ public class Solve {
 
         for (int i = 1; i < m - 1; i++) {
             for (int j = 1; j < n - 1; j++) {
-                if (board[i][j] == 'O'){
+                if (board[i][j] == 'O') {
                     bfs(board, i, j, 'X');
                 }
             }
@@ -56,7 +56,7 @@ public class Solve {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == 'A'){
+                if (board[i][j] == 'A') {
                     board[i][j] = 'O';
                 }
             }
@@ -66,10 +66,10 @@ public class Solve {
 
     public static void main(String[] args) {
         char[][] board = new char[][]{
-                {'X','X','X','X'}, 
-                {'X','O','O','X'},
-                {'X','X','O','X'},
-                {'X','O','X','X'}
+                {'X', 'X', 'X', 'X'},
+                {'X', 'O', 'O', 'X'},
+                {'X', 'X', 'O', 'X'},
+                {'X', 'O', 'X', 'X'}
         };
         new Solve().solve(board);
         for (int i = 0; i < board.length; i++) {

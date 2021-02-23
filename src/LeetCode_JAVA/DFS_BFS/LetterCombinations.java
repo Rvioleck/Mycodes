@@ -1,9 +1,12 @@
 package LeetCode_JAVA.DFS_BFS;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class LetterCombinations {
-    private Map<Character, String> phoneMap = new HashMap(){
+    private Map<Character, String> phoneMap = new HashMap() {
         {
             put('2', "abc");
             put('3', "def");
@@ -15,8 +18,9 @@ public class LetterCombinations {
             put('9', "wxyz");
         }
     };
-    private void dfs(List<String> res, StringBuffer combination, String digits, int index){
-        if (index == digits.length()){
+
+    private void dfs(List<String> res, StringBuffer combination, String digits, int index) {
+        if (index == digits.length()) {
             res.add(new String(combination));
             return;
         }

@@ -8,14 +8,14 @@ public class InsertionSortList {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode cur = head.next, finish = head;
-        while (cur != null){
+        while (cur != null) {
             ListNode cn = cur.next;
             ListNode pre = dummy;
-            if (cur.val >= finish.val){
+            if (cur.val >= finish.val) {
                 finish.next = cur;
                 finish = cur;
             } else {
-                while (pre.next.val < cur.val){
+                while (pre.next.val < cur.val) {
                     pre = pre.next;
                 }
                 cur.next = pre.next;
@@ -28,7 +28,7 @@ public class InsertionSortList {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = ListNode.creat(new int[]{-1,3,0,4,5});
+        ListNode l1 = ListNode.creat(new int[]{-1, 3, 0, 4, 5});
         System.out.println(new InsertionSortList().insertionSortList(l1));
     }
 }

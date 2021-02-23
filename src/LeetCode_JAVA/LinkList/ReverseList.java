@@ -4,7 +4,7 @@ public class ReverseList {
 
     public ListNode reverseList(ListNode head) {
         ListNode dummy = new ListNode(0);
-        while (head != null){
+        while (head != null) {
             ListNode node = new ListNode(head.val);
             node.next = dummy.next;
             dummy.next = node;

@@ -1,17 +1,17 @@
 package Experiment;
 
-abstract class Shape{
+abstract class Shape {
     abstract void draw();
 }
 
-class J_Circle extends Shape{
-    void draw(){
+class J_Circle extends Shape {
+    void draw() {
         System.out.println("draw a circle.");
     }
 }
 
-class J_Square extends Shape{
-    void draw(){
+class J_Square extends Shape {
+    void draw() {
         System.out.println("draw a square.");
     }
 }

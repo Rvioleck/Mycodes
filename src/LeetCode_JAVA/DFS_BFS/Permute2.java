@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Permute2 {
-    private void dfs(int[] nums, List<Integer> path, List<List<Integer>> res, boolean[] vis){
-        if (path.size() == nums.length){
+    private void dfs(int[] nums, List<Integer> path, List<List<Integer>> res, boolean[] vis) {
+        if (path.size() == nums.length) {
             res.add(new ArrayList<>(path));
             return;
         }

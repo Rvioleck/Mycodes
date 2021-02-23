@@ -1,6 +1,9 @@
 package LeetCode_JAVA;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class LevelOrder {
     private List<Integer> res = new ArrayList<>();
@@ -11,13 +14,13 @@ public class LevelOrder {
         TreeNode node;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             node = queue.poll();
             res.add(node.val);
-            if (node.left != null){
+            if (node.left != null) {
                 queue.add(node.left);
             }
-            if (node.right != null){
+            if (node.right != null) {
                 queue.add(node.right);
             }
         }

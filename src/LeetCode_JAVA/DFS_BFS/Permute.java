@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permute {
-    public List<List<Integer>> permute(int[] nums){
+    public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
         dfs(nums, path, res);
@@ -13,7 +13,7 @@ public class Permute {
 
     private void dfs(int[] nums,
                      List<Integer> path,
-                     List<List<Integer>> res){
+                     List<List<Integer>> res) {
         if (path.size() == nums.length) {  // dfs的退出
             if (!res.contains(path))
                 res.add(new ArrayList<>(path)); // 遍历到叶结点时添加到结果集

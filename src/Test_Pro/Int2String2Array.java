@@ -1,18 +1,17 @@
 package Test_Pro;
 
-import org.junit.Test;
 import java.util.Arrays;
 
 public class Int2String2Array {
 
-    public void stringTobasic(String str){
+    public void stringTobasic(String str) {
         int i = Integer.parseInt(str);
         byte b = Byte.parseByte(str);
         double d = Double.parseDouble(str);
     }
 
 
-    public String basicTostring(){
+    public String basicTostring() {
         int i = 10;
         byte b = 2;
         double d = 2.3;
@@ -23,7 +22,7 @@ public class Int2String2Array {
     }
 
 
-    public String basicArrayTostring(){
+    public String basicArrayTostring() {
         int[] arrInt = {1, 3, 56, 2};
         String str1 = Arrays.toString(arrInt);
         System.out.println(str1);
@@ -42,7 +41,7 @@ public class Int2String2Array {
     }
 
 
-    public void arrayChar_string(){
+    public void arrayChar_string() {
         String str = "123";
         char[] charArray = str.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -53,12 +52,11 @@ public class Int2String2Array {
     }
 
 
-    public void arrayByte_string(){
+    public void arrayByte_string() {
         String str = "123abc中国";
         byte[] b = str.getBytes();
         String str2 = Arrays.toString(b);
     }
-
 
 
     public static void main(String[] args) {

@@ -48,7 +48,7 @@ public class CanFinish {
         return count == numCourses;
     }
 
-    public int[] findOrder(int numCourses, int[][] prerequisites){
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
         // result array records the topological sequence of the graph.
         int[] result = new int[numCourses];
         // inDegree array records the initial in degree of all nodes.
@@ -79,7 +79,7 @@ public class CanFinish {
         }
         // if the graph is cyclic, then count is not equal to numCourses, return empty array.
         // else the graph is acyclic, return result.
-        if (count != numCourses){
+        if (count != numCourses) {
             return new int[0];
         } else {
             return result;

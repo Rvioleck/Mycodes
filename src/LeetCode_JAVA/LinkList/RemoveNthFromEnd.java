@@ -6,8 +6,8 @@ public class RemoveNthFromEnd {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode slow = dummy, fast = head;
-        while (fast != null){
-            if (n-- > 0){
+        while (fast != null) {
+            if (n-- > 0) {
                 fast = fast.next;
             } else {
                 fast = fast.next;

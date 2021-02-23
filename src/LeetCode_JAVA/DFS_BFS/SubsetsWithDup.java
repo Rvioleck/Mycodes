@@ -6,7 +6,8 @@ import java.util.List;
 
 public class SubsetsWithDup {
     private boolean[] vis;
-    private void dfs(List<List<Integer>> res, List<Integer> subset, int[] nums, int index){
+
+    private void dfs(List<List<Integer>> res, List<Integer> subset, int[] nums, int index) {
         res.add(new ArrayList<>(subset));   // n叉树，每次加入元素都要判断n个元素
         for (int i = index; i < nums.length; i++) {
             if (i > index && nums[i] == nums[i - 1]) continue;

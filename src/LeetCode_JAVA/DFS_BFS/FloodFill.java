@@ -6,27 +6,27 @@ import java.util.Queue;
 public class FloodFill {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int color = image[sr][sc];
-        if (color == newColor){
+        if (color == newColor) {
             return image;
         }
         Queue<int[]> queue = new LinkedList<>();
         int m = image.length;
         int n = image[0].length;
         queue.offer(new int[]{sr, sc});
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int[] point = queue.remove();
             int r = point[0], c = point[1];
             image[r][c] = newColor;
-            if (r - 1 >= 0 && image[r - 1][c] == color){
+            if (r - 1 >= 0 && image[r - 1][c] == color) {
                 queue.offer(new int[]{r - 1, c});
             }
-            if (r + 1 < m && image[r + 1][c] == color){
+            if (r + 1 < m && image[r + 1][c] == color) {
                 queue.offer(new int[]{r + 1, c});
             }
-            if (c - 1 >= 0 && image[r][c - 1] == color){
+            if (c - 1 >= 0 && image[r][c - 1] == color) {
                 queue.offer(new int[]{r, c - 1});
             }
-            if (c + 1 < n && image[r][c + 1] == color){
+            if (c + 1 < n && image[r][c + 1] == color) {
                 queue.offer(new int[]{r, c + 1});
             }
         }

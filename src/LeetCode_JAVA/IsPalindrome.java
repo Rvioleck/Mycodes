@@ -5,23 +5,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class IsPalindrome {
-    public boolean isPalindrome(String s){
+    public boolean isPalindrome(String s) {
         s = s.toLowerCase();
         int low = 0, high = s.length() - 1;
-        while (low < high){
-            if (!(s.charAt(low) <= 'Z' && s.charAt(low) >='A'
+        while (low < high) {
+            if (!(s.charAt(low) <= 'Z' && s.charAt(low) >= 'A'
                     || s.charAt(low) <= 'z' && s.charAt(low) >= 'a'
-                    || s.charAt(low) <= '9' && s.charAt(low) >= '0')){
+                    || s.charAt(low) <= '9' && s.charAt(low) >= '0')) {
                 low++;
                 continue;
-            }
-            else if(!(s.charAt(high) <= 'Z' && s.charAt(high) >='A'
+            } else if (!(s.charAt(high) <= 'Z' && s.charAt(high) >= 'A'
                     || s.charAt(high) <= 'z' && s.charAt(high) >= 'a'
-                    || s.charAt(high) <= '9' && s.charAt(high) >= '0')){
+                    || s.charAt(high) <= '9' && s.charAt(high) >= '0')) {
                 high--;
                 continue;
-            }
-            else if (s.charAt(low) != s.charAt(high)){
+            } else if (s.charAt(low) != s.charAt(high)) {
                 return false;
             }
             low++;
@@ -30,15 +28,15 @@ public class IsPalindrome {
         return true;
     }
 
-    public boolean isPalindrome2(int x){
-        if (x<0 || x!=0 && x%10==0)
+    public boolean isPalindrome2(int x) {
+        if (x < 0 || x != 0 && x % 10 == 0)
             return false;
         int rev = 0;
-        while (rev < x){
-            rev = rev*10 + x%10;
+        while (rev < x) {
+            rev = rev * 10 + x % 10;
             x /= 10;
         }
-        return rev == x || rev/10 == x;
+        return rev == x || rev / 10 == x;
 //        int x0 = x;
 //        if (x < 0)
 //            return false;
@@ -58,13 +56,13 @@ public class IsPalindrome {
 
 
     @Test
-    public void isPalindromeTest(){
+    public void isPalindromeTest() {
         String s = "0P";
         assertEquals(isPalindrome(s), true);
     }
 
     @Test
-    public void isPalindromeTest2(){
+    public void isPalindromeTest2() {
         int x = 12321;
         assertEquals(isPalindrome2(x), true);
     }

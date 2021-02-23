@@ -6,8 +6,9 @@ import java.util.List;
 
 public class CombinationSum2 {
     private boolean[] vis;
-    private void dfs(int[] candidates, List<List<Integer>> res, List<Integer> sum, int left){
-        if (left == 0){
+
+    private void dfs(int[] candidates, List<List<Integer>> res, List<Integer> sum, int left) {
+        if (left == 0) {
             res.add(new ArrayList<>(sum));
             return;
         }
@@ -39,6 +40,6 @@ public class CombinationSum2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new CombinationSum2().combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5} ,8));
+        System.out.println(new CombinationSum2().combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8));
     }
 }

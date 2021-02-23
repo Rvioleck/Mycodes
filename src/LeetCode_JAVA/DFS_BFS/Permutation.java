@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutation {
-    private void dfs(String S, StringBuffer path, List<String> res, boolean[] vis){
-        if (path.length() == S.length()){
+    private void dfs(String S, StringBuffer path, List<String> res, boolean[] vis) {
+        if (path.length() == S.length()) {
             res.add(new String(path));
             return;
         }
@@ -30,8 +30,8 @@ public class Permutation {
     public static void main(String[] args) {
 //        System.out.println(new Permutation().permutation("abc"));
         String[] res = new Permutation().permutation("abc");
-        for (String s:
-             res) {
+        for (String s :
+                res) {
             System.out.println(s);
         }
     }

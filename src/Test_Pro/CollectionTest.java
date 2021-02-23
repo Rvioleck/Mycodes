@@ -4,10 +4,11 @@ import org.junit.Test;
 
 import java.util.*;
 
-class Person{
+class Person {
     private String name;
     private int age;
-    public Person(){
+
+    public Person() {
     }
 
     public Person(String name, int age) {
@@ -45,7 +46,7 @@ class Person{
 public class CollectionTest {
     // ArrayList有序
     @Test
-    public void test1(){
+    public void test1() {
         // contains() and containsAll()
         Collection coll = new ArrayList();
         coll.add(123);
@@ -65,7 +66,7 @@ public class CollectionTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         // remove(Object obj)
         Collection coll = new ArrayList();
         coll.add(123);
@@ -84,7 +85,7 @@ public class CollectionTest {
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -106,7 +107,7 @@ public class CollectionTest {
     }
 
     @Test
-    public void test4(){
+    public void test4() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);

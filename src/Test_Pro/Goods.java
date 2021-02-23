@@ -30,13 +30,13 @@ public class Goods implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        if (o instanceof Test_Pro.Goods){
-            Test_Pro.Goods goods = (Test_Pro.Goods)o;
-            if (this.price > goods.price){
+        if (o instanceof Test_Pro.Goods) {
+            Test_Pro.Goods goods = (Test_Pro.Goods) o;
+            if (this.price > goods.price) {
                 return 1;
-            }else if (this.price < goods.price){
+            } else if (this.price < goods.price) {
                 return -1;
-            }else{
+            } else {
 //                return 0;
                 // 返回价格从低到高，然后名称从低到高
                 return this.name.compareTo(goods.name);

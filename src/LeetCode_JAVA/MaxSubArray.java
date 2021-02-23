@@ -1,7 +1,5 @@
 package LeetCode_JAVA;
 
-import java.util.Arrays;
-
 public class MaxSubArray {
     public int maxSubArray(int[] nums) {
         int[] dp = new int[nums.length];

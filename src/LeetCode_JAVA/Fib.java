@@ -1,7 +1,7 @@
 package LeetCode_JAVA;
 
 public class Fib {
-    public int fib(int n){
+    public int fib(int n) {
         int f0 = 0, f1 = 1, result = 0;
         if (n == 0)
             return f0;

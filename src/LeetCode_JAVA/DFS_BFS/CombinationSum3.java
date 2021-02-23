@@ -5,8 +5,9 @@ import java.util.List;
 
 public class CombinationSum3 {
     private int k, n;
-    private void dfs(List<List<Integer>> res, List<Integer> combination, int index, int sum){
-        if (sum == n && combination.size() == k){
+
+    private void dfs(List<List<Integer>> res, List<Integer> combination, int index, int sum) {
+        if (sum == n && combination.size() == k) {
             res.add(new ArrayList<>(combination));
             return;
         }

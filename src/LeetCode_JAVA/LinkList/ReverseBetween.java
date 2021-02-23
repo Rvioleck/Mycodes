@@ -6,14 +6,14 @@ public class ReverseBetween {
         dummy.next = head;
         ListNode l = head, r = head, preL = dummy, preR = dummy;
         int delta = right - left;
-        while (left-- != 1){
+        while (left-- != 1) {
             preL = l;
             l = l.next;
             r = r.next;
         }
         preR = r;
         r = r.next;
-        while (delta-- != 0){
+        while (delta-- != 0) {
             ListNode rn = r.next;
             r.next = preR;
             preR = r;

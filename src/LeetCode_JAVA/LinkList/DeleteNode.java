@@ -6,8 +6,8 @@ public class DeleteNode {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode cur = dummy;
-        while (cur != null && cur.next != null){
-            if (cur.next.val == val){
+        while (cur != null && cur.next != null) {
+            if (cur.next.val == val) {
                 cur.next = cur.next.next;
             }
             cur = cur.next;

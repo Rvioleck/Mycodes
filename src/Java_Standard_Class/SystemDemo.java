@@ -1,7 +1,7 @@
 package Java_Standard_Class;
 
 public class SystemDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // 计算程序的执行时间
 //		long start, end, sum = 0, times = 1_000_000_000;
 //		System.out.println("执行"+times+"次循环需要的时间");
@@ -26,15 +26,15 @@ public class SystemDemo {
 
         // 计算内存使用情况
         Runtime r = Runtime.getRuntime();
-        System.out.println("Java虚拟机总内存："+r.totalMemory());
+        System.out.println("Java虚拟机总内存：" + r.totalMemory());
         r.gc();
         System.out.println("空闲内存l:" + r.freeMemory());
         String[] ss = new String[1000000];
-        for(int i=0; i<ss.length; i++){
+        for (int i = 0; i < ss.length; i++) {
             ss[i] = new String("Java程序设计");
         }
         System.out.println("空闲内存2：" + r.freeMemory());
-        for(int i=0; i<ss.length; i++){
+        for (int i = 0; i < ss.length; i++) {
             ss[i] = null;
         }
         r.gc();

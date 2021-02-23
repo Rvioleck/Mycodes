@@ -4,8 +4,8 @@ public class GetKthFromEnd {
 
     public ListNode getKthFromEnd(ListNode head, int k) {
         ListNode slow = head, fast = head;
-        while (fast != null){
-            if (k-- > 0){
+        while (fast != null) {
+            if (k-- > 0) {
                 fast = fast.next;
             } else {
                 fast = fast.next;

@@ -18,8 +18,7 @@ public class FindOrder {
             if (prerequisite[0] == v) {
                 if (vis[prerequisite[1]] == 0) {  // vis = 0, v has not been searched, keep traversing adjacent nodes.
                     dfs(prerequisite[1], prerequisites);
-                }
-                else if (vis[prerequisite[1]] == 1){ // vis = 1, graph is cyclic, return.
+                } else if (vis[prerequisite[1]] == 1) { // vis = 1, graph is cyclic, return.
                     valid = false;
                     return;
                 }

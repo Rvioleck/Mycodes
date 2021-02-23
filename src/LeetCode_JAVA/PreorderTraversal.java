@@ -7,8 +7,8 @@ import java.util.Stack;
 public class PreorderTraversal {
     private List<Integer> res = new ArrayList<>();
 
-    public List<Integer> preorderTraversal(TreeNode root){
-        if (root != null){
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if (root != null) {
             res.add(root.val);
             preorderTraversal(root.left);
             preorderTraversal(root.right);
@@ -16,11 +16,11 @@ public class PreorderTraversal {
         return res;
     }
 
-    public List<Integer> preOrderTraversal(TreeNode root){
+    public List<Integer> preOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode node = new TreeNode();
-        while (node != null && !stack.isEmpty()){
-            if (node != null){
+        while (node != null && !stack.isEmpty()) {
+            if (node != null) {
                 res.add(node.val);
                 stack.push(node);
                 node = node.left;

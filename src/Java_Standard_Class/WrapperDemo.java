@@ -34,6 +34,5 @@ public class WrapperDemo {
 //		System.out.print(s1+" "+s2+" "+s3+" "+s4+" "+s5);
 
 
-
     }
 }

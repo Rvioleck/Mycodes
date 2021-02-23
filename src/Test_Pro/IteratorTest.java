@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class IteratorTest {
 
     @Test
-    public void test1(){
+    public void test1() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -29,13 +29,13 @@ public class IteratorTest {
 //            System.out.println(iterator.next());
 //        }
         // 方法三
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
 
     @Test
-    public void test(){
+    public void test() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -44,15 +44,15 @@ public class IteratorTest {
         coll.add(new Person("Jerry", 20));
         // 删除元素
         Iterator iterator = coll.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Object obj = iterator.next();
-            if ("Tom".equals(obj)){
+            if ("Tom".equals(obj)) {
                 iterator.remove();
             }
         }
         // 打印
         iterator = coll.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }

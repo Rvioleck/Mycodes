@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CombinationSum {
-    private void dfs(int[] candidates ,List<List<Integer>> res, List<Integer> sum, int left){
-        if (left == 0){
+    private void dfs(int[] candidates, List<List<Integer>> res, List<Integer> sum, int left) {
+        if (left == 0) {
             res.add(new ArrayList<>(sum));
             return;
         }

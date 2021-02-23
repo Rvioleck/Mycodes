@@ -7,7 +7,7 @@ import java.math.BigInteger;
 
 public class OtherClassTest {
     @Test
-    public void systemTest(){
+    public void systemTest() {
         String javaVersion = System.getProperty("java.version");
         System.out.println("java的version:" + javaVersion);
 
@@ -31,21 +31,21 @@ public class OtherClassTest {
     }
 
     @Test
-    public void mathTest(){
-        System.out.println("abs(-1) = "+Math.abs(-1));
-        System.out.println("sqrt(9) = "+Math.sqrt(9));
-        System.out.println("pow(-2, 3) = "+Math.pow(-2, 3));
-        System.out.println("log(e) = "+Math.log(Math.E));
-        System.out.println("e^1 = "+Math.exp(1));
-        System.out.println("1.2四舍五入 = "+Math.round(1.2));
-        System.out.println("1.2上取整 = "+Math.ceil(1.2));
-        System.out.println("1.2下取整 = "+Math.floor(1.2));
-        System.out.println("pi转角度 = "+Math.toDegrees(Math.PI));
-        System.out.println("180转弧度 = "+Math.toRadians(180));
+    public void mathTest() {
+        System.out.println("abs(-1) = " + Math.abs(-1));
+        System.out.println("sqrt(9) = " + Math.sqrt(9));
+        System.out.println("pow(-2, 3) = " + Math.pow(-2, 3));
+        System.out.println("log(e) = " + Math.log(Math.E));
+        System.out.println("e^1 = " + Math.exp(1));
+        System.out.println("1.2四舍五入 = " + Math.round(1.2));
+        System.out.println("1.2上取整 = " + Math.ceil(1.2));
+        System.out.println("1.2下取整 = " + Math.floor(1.2));
+        System.out.println("pi转角度 = " + Math.toDegrees(Math.PI));
+        System.out.println("180转弧度 = " + Math.toRadians(180));
     }
 
     @Test
-    public void bigIntegerBigDecimalTest(){
+    public void bigIntegerBigDecimalTest() {
         // 高精度整型，高精度浮点数
         BigInteger bi = new BigInteger("12312412513521351212");
         BigDecimal bd = new BigDecimal("12345.351");

@@ -1,9 +1,10 @@
 package Java_Standard_Class;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegexDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // String类的matches(),split(),replaceFirst(),replaceAll()的方法均需要传入一个正则表达式
 //		String regex = "[，。 ]+";
 //		String s = "中国，你好。Java。。 程序设计。";
@@ -26,8 +27,8 @@ public class RegexDemo {
         Matcher m = null;
         boolean b = false;
         p = Pattern.compile("[1-2]\\d{0,2}+\\.[1-2]\\d{0,2}+\\.[1-2]\\d{0,2}+\\.[1-2]\\d{0,2}");
-        String [] ips = {"192.168.1.1", "192.168.1.1345", "222.168.1.134", "322.168.1.134"};
-        for(String ip: ips){
+        String[] ips = {"192.168.1.1", "192.168.1.1345", "222.168.1.134", "322.168.1.134"};
+        for (String ip : ips) {
             m = p.matcher(ip);
             b = m.matches();
             System.out.println(ip + ": " + b);

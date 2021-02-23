@@ -5,8 +5,9 @@ public class Exist {
     private int m, n;
     private boolean res = false;
     private boolean[][] vis;
-    private void dfs(char[][] board, StringBuffer letters, int x, int y, int index){
-        if (new String(letters).equals(word)){
+
+    private void dfs(char[][] board, StringBuffer letters, int x, int y, int index) {
+        if (new String(letters).equals(word)) {
             res = true;
             return;
         }

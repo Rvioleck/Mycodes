@@ -8,17 +8,17 @@ import java.util.List;
 public class SelfDividingNumbers {
     public List<Integer> selfDividingNumbers(int left, int right) {
         List list = new ArrayList();
-        for (int i = left; i <= right ; i++) {
-            if (isDividing(i)){
+        for (int i = left; i <= right; i++) {
+            if (isDividing(i)) {
                 list.add(i);
             }
         }
         return list;
     }
 
-    public boolean isDividing(int num){
+    public boolean isDividing(int num) {
         int num1 = num;
-        while (num1 != 0){
+        while (num1 != 0) {
             int digit = num1 % 10;
             if (digit == 0 || num % digit != 0) {
                 return false;
@@ -29,7 +29,7 @@ public class SelfDividingNumbers {
     }
 
     @Test
-    public void test(){
+    public void test() {
         int num = 10;
         System.out.println(isDividing(num));
     }

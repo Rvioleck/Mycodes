@@ -3,14 +3,14 @@ package LeetCode_JAVA;
 import org.junit.Test;
 
 public class LongestCommonPrefix {
-    public String longestCommonPrefix(String[] strs){
+    public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0)
             return "";
         if (strs.length == 1)
             return strs[0];
         for (int i = 0; i < strs[0].length(); i++) {
             for (int j = 1; j < strs.length; j++) {
-                if (strs[j].length() == i || strs[j-1].length() == i)  // 这个if-else判断溢出
+                if (strs[j].length() == i || strs[j - 1].length() == i)  // 这个if-else判断溢出
                     // 当下标遍历到数组长度（溢出），直接返回前i-1个字符
                     return strs[0].substring(0, i);
                 else {
@@ -27,10 +27,10 @@ public class LongestCommonPrefix {
     }
 
     @Test
-    public void test(){
+    public void test() {
 //        String[] strs = {"flower","flow","flight"};
 //        String[] strs = {"fl","f"};
-        String[] strs = {"dog","racecar","car"};
+        String[] strs = {"dog", "racecar", "car"};
         System.out.println(longestCommonPrefix(strs));
     }
 }

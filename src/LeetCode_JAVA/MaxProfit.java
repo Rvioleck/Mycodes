@@ -44,7 +44,7 @@ public class MaxProfit {
 
     @Test
     public void test() {
-        int[] prices = new int[]{8,10,0,2,1,6};
+        int[] prices = new int[]{8, 10, 0, 2, 1, 6};
         System.out.println(maxProfit2(prices));
     }
 }

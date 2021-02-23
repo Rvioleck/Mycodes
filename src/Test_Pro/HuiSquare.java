@@ -1,21 +1,19 @@
 package Test_Pro;
 
-import LeetCode_JAVA.HammingWeight;
-
 public class HuiSquare {
-    public int[][] huiSquare(int n){
+    public int[][] huiSquare(int n) {
         int[][] res = new int[n][n];
         int minX = 0;
         int maxX = n - 1;
         int minY = 0;
         int maxY = n - 1;
         int num = 0;
-        while(minX <= maxX){
-            for (int i = minY; i <= maxY; i++){
+        while (minX <= maxX) {
+            for (int i = minY; i <= maxY; i++) {
                 res[minX][i] = ++num;
             }
             minX++;
-            for (int i = minX; i <= maxX; i++){
+            for (int i = minX; i <= maxX; i++) {
                 res[i][maxY] = ++num;
             }
             maxY--;
@@ -23,7 +21,7 @@ public class HuiSquare {
                 res[maxX][i] = ++num;
             }
             maxX--;
-            for (int i = maxX; i >= minX; i--){
+            for (int i = maxX; i >= minX; i--) {
                 res[i][minY] = ++num;
             }
             minY++;

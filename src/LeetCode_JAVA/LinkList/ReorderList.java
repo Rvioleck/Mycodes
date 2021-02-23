@@ -3,18 +3,18 @@ package LeetCode_JAVA.LinkList;
 public class ReorderList {
     public void reorderList(ListNode head) {
         ListNode left = head, right = head;  // find the middle of the link list;
-        while (right != null){
+        while (right != null) {
             right = right.next;
-            if (right != null){
+            if (right != null) {
                 right = right.next;
                 left = left.next;
             }
         }
-        if (left != null){
+        if (left != null) {
             right = left.next;
             left.next = null;
         }
-        while (right != null){
+        while (right != null) {
             ListNode fn = right.next;
             right.next = left;
             left = right;
@@ -22,7 +22,7 @@ public class ReorderList {
         }
         right = left;
         left = head;
-        while (left != null && right != null){
+        while (left != null && right != null) {
             ListNode ln = left.next, rn = right.next;
             left.next = right;
             left = ln;

@@ -1,24 +1,27 @@
 package Experiment;
 
-interface Vehicle{
+interface Vehicle {
     void start();
+
     void stop();
 }
 
-class Car implements Vehicle{
-    public void start(){
+class Car implements Vehicle {
+    public void start() {
         System.out.println("car start!");
     }
-    public void stop(){
+
+    public void stop() {
         System.out.println("car stop!");
     }
 }
 
-class Bike implements Vehicle{
-    public void start(){
+class Bike implements Vehicle {
+    public void start() {
         System.out.println("bike start!");
     }
-    public void stop(){
+
+    public void stop() {
         System.out.println("bike stop!");
     }
 }

@@ -9,8 +9,8 @@ public class IsValid {
         // [({ })]
         Stack<Character> stack = new Stack();
         for (int i = 0; i < s.length(); i++) {
-            if (!stack.empty()){
-                if (antiBracket(s.charAt(i)) == stack.peek()){
+            if (!stack.empty()) {
+                if (antiBracket(s.charAt(i)) == stack.peek()) {
                     stack.pop();
                     continue;
                 }
@@ -20,17 +20,21 @@ public class IsValid {
         return stack.empty();
     }
 
-    public char antiBracket(char ch){
-        switch (ch){
-            case ']': return '[';
-            case '}': return '{';
-            case ')': return '(';
-            default: return ' ';
+    public char antiBracket(char ch) {
+        switch (ch) {
+            case ']':
+                return '[';
+            case '}':
+                return '{';
+            case ')':
+                return '(';
+            default:
+                return ' ';
         }
     }
 
     @Test
-    public void test(){
+    public void test() {
 //        String s = "([)]";
 //        String s = "{[]}";
         String s = "";

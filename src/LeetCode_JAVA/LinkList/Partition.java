@@ -5,9 +5,9 @@ public class Partition {
     public ListNode partition(ListNode head, int x) {
         ListNode lessHead = new ListNode(), greatHead = new ListNode();
         ListNode less = lessHead, great = greatHead, cur = head;
-        while (cur != null){
+        while (cur != null) {
             ListNode cn = cur.next;
-            if (cur.val < x){
+            if (cur.val < x) {
                 cur.next = less.next;
                 less.next = cur;
                 less = cur;

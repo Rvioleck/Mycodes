@@ -7,7 +7,7 @@ public class NumIslands {
     int m, n;
     int count = 0;
 
-    private void dfs(char[][] grid, int x, int y){
+    private void dfs(char[][] grid, int x, int y) {
         if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1')
             return;
         grid[x][y] = '0';
@@ -17,10 +17,10 @@ public class NumIslands {
         dfs(grid, x, y - 1);
     }
 
-    private void bfs(char[][] grid, int x, int y){
+    private void bfs(char[][] grid, int x, int y) {
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{x, y});
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int[] point = queue.remove();
             int i = point[0], j = point[1];
             if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] != '1') continue;
@@ -39,7 +39,7 @@ public class NumIslands {
         n = grid[0].length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1'){
+                if (grid[i][j] == '1') {
                     bfs(grid, i, j);
                     count++;
                 }
@@ -47,12 +47,13 @@ public class NumIslands {
         }
         return count;
     }
+
     public int numIslands(char[][] grid) {
         m = grid.length;
         n = grid[0].length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1'){
+                if (grid[i][j] == '1') {
                     dfs(grid, i, j);
                     count++;
                 }
@@ -63,10 +64,10 @@ public class NumIslands {
 
     public static void main(String[] args) {
         char[][] grid = new char[][]{
-                {'1','1','1','1','0'},
-                {'1','1','0','1','0'},
-                {'1','1','0','0','0'},
-                {'0','0','0','0','0'}
+                {'1', '1', '1', '1', '0'},
+                {'1', '1', '0', '1', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '0', '0', '0'}
         };
         System.out.println(new NumIslands().numIslands2(grid));
     }

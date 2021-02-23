@@ -2,7 +2,7 @@ package Java_Standard_Class;
 
 public class StringDemo {
     // 不可更改字符串String
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /* 调用String类的构造方法，使用子串常量，构造新字符串对象 */
 //		String s;
 //		s = new String("We are students");

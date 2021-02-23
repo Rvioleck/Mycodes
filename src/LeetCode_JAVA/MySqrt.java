@@ -1,17 +1,15 @@
 package LeetCode_JAVA;
 
 public class MySqrt {
-    public int mySqrt(int x){
+    public int mySqrt(int x) {
         if (x == 1)
             return 1;
         int low = 0, high = x;
-        while (low < high-1){
+        while (low < high - 1) {
             int mid = low + (high - low) / 2;
-            if ((long)mid*mid <= x){
+            if ((long) mid * mid <= x) {
                 low = mid;
-            }
-
-            else
+            } else
                 high = mid;
         }
         return low;
@@ -32,7 +30,8 @@ public class MySqrt {
 //        result = i - 1;
 //        return result;
     }
-    public int mySqrt2(int x)  {
+
+    public int mySqrt2(int x) {
         if (x == 0) {
             return 0;
         }

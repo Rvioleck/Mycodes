@@ -9,8 +9,8 @@ public class RemoveDuplicateNodes {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode cur = dummy;
-        while (cur.next != null){
-            if (set.contains(cur.next.val)){
+        while (cur.next != null) {
+            if (set.contains(cur.next.val)) {
                 cur.next = cur.next.next;
             } else {
                 set.add(cur.next.val);

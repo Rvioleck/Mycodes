@@ -13,36 +13,36 @@ public class OrangesRotting {
         boolean haveFresh = false;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == 2){
+                if (grid[i][j] == 2) {
                     queue.offer(new int[]{i, j});
                 }
-                if (grid[i][j] == 1 && !haveFresh){
+                if (grid[i][j] == 1 && !haveFresh) {
                     haveFresh = true;
                 }
             }
         }
-        if (!haveFresh){
+        if (!haveFresh) {
             return 0;
         }
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int curSize = queue.size();
             day++;
-            while (curSize-- != 0){
+            while (curSize-- != 0) {
                 int[] point = queue.remove();
                 int i = point[0], j = point[1];
-                if (i - 1 >= 0 && grid[i - 1][j] == 1){
+                if (i - 1 >= 0 && grid[i - 1][j] == 1) {
                     grid[i - 1][j] = 2;
                     queue.offer(new int[]{i - 1, j});
                 }
-                if (i + 1 < m && grid[i + 1][j] == 1){
+                if (i + 1 < m && grid[i + 1][j] == 1) {
                     grid[i + 1][j] = 2;
                     queue.offer(new int[]{i + 1, j});
                 }
-                if (j - 1 >= 0 && grid[i][j - 1] == 1){
+                if (j - 1 >= 0 && grid[i][j - 1] == 1) {
                     grid[i][j - 1] = 2;
                     queue.offer(new int[]{i, j - 1});
                 }
-                if (j + 1 < n && grid[i][j + 1] == 1){
+                if (j + 1 < n && grid[i][j + 1] == 1) {
                     grid[i][j + 1] = 2;
                     queue.offer(new int[]{i, j + 1});
                 }

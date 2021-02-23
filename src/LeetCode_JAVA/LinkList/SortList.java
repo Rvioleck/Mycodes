@@ -2,11 +2,11 @@ package LeetCode_JAVA.LinkList;
 
 public class SortList {
 
-    private ListNode getMid(ListNode head){
+    private ListNode getMid(ListNode head) {
         ListNode slow = head, fast = head;
-        while (fast != null){
+        while (fast != null) {
             fast = fast.next;
-            if (fast != null){
+            if (fast != null) {
                 fast = fast.next;
                 if (fast == null) break;
                 slow = slow.next;
@@ -15,7 +15,7 @@ public class SortList {
         return slow;
     }
 
-    private ListNode mergeTwoLists(ListNode left, ListNode right){
+    private ListNode mergeTwoLists(ListNode left, ListNode right) {
         ListNode dummy = new ListNode();
         ListNode prev = dummy;
         while (left != null && right != null) {
@@ -32,8 +32,8 @@ public class SortList {
         return dummy.next;
     }
 
-    public ListNode sortList(ListNode head){
-        if (head == null || head.next == null){
+    public ListNode sortList(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode midNode = getMid(head);
@@ -45,7 +45,7 @@ public class SortList {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = ListNode.creat(new int[]{-1,5,3,4,0});
+        ListNode l1 = ListNode.creat(new int[]{-1, 5, 3, 4, 0});
         System.out.println(new SortList().sortList(l1));
     }
 

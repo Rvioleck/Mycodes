@@ -8,7 +8,7 @@ public class SplitListToParts {
         ListNode[] res = new ListNode[k];
         int nodeNum = 0;
         ListNode cur = root, pre = new ListNode();
-        while (cur != null){
+        while (cur != null) {
             nodeNum++;
             cur = cur.next;
         }
@@ -17,7 +17,7 @@ public class SplitListToParts {
         int surplus = nodeNum % k;
         for (int i = 0; i < k; i++) {
             int count = surplus-- > 0 ? average + 1 : average;
-            while (count-- != 0){
+            while (count-- != 0) {
                 pre = cur;
                 cur = cur.next;
             }

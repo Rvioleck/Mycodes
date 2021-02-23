@@ -5,11 +5,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TrailingZeroes {
-    public int trailingZeroes(int n){
+    public int trailingZeroes(int n) {
         int res = 0;
         for (int i = 5; i <= n; i += 5) {
             int factor = i;
-            while(factor % 5 == 0){
+            while (factor % 5 == 0) {
                 res += 1;
                 factor /= 5;
             }
@@ -18,7 +18,7 @@ public class TrailingZeroes {
     }
 
     @Test
-    public void test(){
+    public void test() {
         assertEquals(trailingZeroes(25), 6);
 
     }

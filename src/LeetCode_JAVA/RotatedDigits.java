@@ -5,15 +5,15 @@ import org.junit.Test;
 public class RotatedDigits {
     public int rotatedDigits(int N) {
         int count = 0;
-        for (int i = 1; i <= N ; i++) {
-            if (isGood(i)){
+        for (int i = 1; i <= N; i++) {
+            if (isGood(i)) {
                 count++;
             }
         }
         return count;
     }
 
-    public boolean isGood(int num){
+    public boolean isGood(int num) {
         String str = String.valueOf(num);
         if (str.indexOf("3") >= 0
                 || str.indexOf("4") >= 0
@@ -30,7 +30,7 @@ public class RotatedDigits {
     }
 
     @Test
-    public void test(){
+    public void test() {
         int num = 10;
         System.out.println(rotatedDigits(num));
     }
