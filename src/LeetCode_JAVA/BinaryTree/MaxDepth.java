@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.BinaryTree;
 
 public class MaxDepth {
     public int maxDepth(TreeNode root) {

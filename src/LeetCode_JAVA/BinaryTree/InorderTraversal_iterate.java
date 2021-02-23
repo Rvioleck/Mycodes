@@ -1,20 +1,11 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class InorderTraversal {
+public class InorderTraversal_iterate {
     private List<Integer> res = new ArrayList<>();
-
-    public List<Integer> inorderTraversal(TreeNode root) {
-        if (root != null) {
-            inorderTraversal(root.left);
-            res.add(root.val);
-            inorderTraversal(root.right);
-        }
-        return res;
-    }
 
     public List<Integer> inOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
@@ -31,4 +22,5 @@ public class InorderTraversal {
         }
         return res;
     }
+
 }

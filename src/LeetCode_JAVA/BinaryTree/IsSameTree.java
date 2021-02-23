@@ -1,23 +1,4 @@
-package LeetCode_JAVA;
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+package LeetCode_JAVA.BinaryTree;
 
 public class IsSameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {
