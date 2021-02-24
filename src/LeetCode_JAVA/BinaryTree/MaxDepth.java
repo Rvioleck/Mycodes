@@ -8,4 +8,9 @@ public class MaxDepth {
             return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
         }
     }
+
+    public static void main(String[] args) {
+        TreeNode t = TreeNode.create("[1,2,5,3,4,null,6]");
+        System.out.println(new MaxDepth().maxDepth(t));
+    }
 }
