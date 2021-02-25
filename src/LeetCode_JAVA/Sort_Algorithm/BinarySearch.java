@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.Sort_Algorithm;
 
 public class BinarySearch {
     public int search(int[] nums, int target) {

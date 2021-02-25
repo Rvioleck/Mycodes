@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.Sort_Algorithm;
 
 import java.util.Random;
 
