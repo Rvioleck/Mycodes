@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class test {
-    static int arr[] = new int[10];
 
     public static void main(String[] args) {
-        System.out.println(arr[9]);
+        String res = "1 2 3 4 5";
+        System.out.println(Arrays.toString(res.split(" ", 2)));
     }
 }
