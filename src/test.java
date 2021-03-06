@@ -1,9 +1,11 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class test {
 
     public static void main(String[] args) {
-        String res = "1 2 3 4 5";
-        System.out.println(Arrays.toString(res.split(" ", 2)));
+        Map<Character, Integer> map = new HashMap<>();
+
+        map.put('a', 1);
+        map.put('a', 2);
     }
 }
