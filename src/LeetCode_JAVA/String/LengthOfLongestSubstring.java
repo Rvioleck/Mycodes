@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.String;
 
 import org.junit.Test;
 
@@ -9,10 +9,10 @@ public class LengthOfLongestSubstring {
         // 无重复字符的最长子串
         if (s.length() == 1)
             return 1;
-        ArrayList list = new ArrayList(); // 子串入ArrayList
+        ArrayList<Character> list = new ArrayList<>(); // 子串入ArrayList
         int result = 0, iSubList = -1; // iSubList初始化为-1 为子串在原串的位置
         for (int i = 0; i < s.length(); i++) {
-            if (list.contains(s.charAt(i)) == false) {
+            if (!list.contains(s.charAt(i))) {
                 // 如果下个字符不存在子串中
                 if (iSubList == -1) // 每次list为空后首次执行添加操作时
                     iSubList = i;   // 记住list的头在array中的坐标iSubList
