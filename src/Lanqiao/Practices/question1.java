@@ -1,4 +1,4 @@
-package Lanqiao;
+package Lanqiao.Practices;
 
 public class question1 {
     // 3A+7B+C = 315

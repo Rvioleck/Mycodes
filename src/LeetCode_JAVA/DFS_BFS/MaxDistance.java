@@ -15,7 +15,7 @@ public class MaxDistance {
             int[] point = queue.remove();
             int i = point[0], j = point[1], dis = point[2];
             if (i < 0 || i >= m || j < 0 || j >= n) continue;
-            if (vis[i][j] == true) continue;
+            if (vis[i][j]) continue;
             if (grid[i][j] == 1) {
                 return dis;
             }

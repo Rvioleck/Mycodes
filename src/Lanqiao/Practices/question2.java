@@ -1,4 +1,4 @@
-package Lanqiao;
+package Lanqiao.Practices;
 
 import java.util.HashMap;
 import java.util.Scanner;

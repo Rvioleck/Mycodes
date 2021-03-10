@@ -1,3 +1,5 @@
+package Lanqiao.Practices;
+
 import java.util.Scanner;
 
 public class I {
