@@ -2,7 +2,7 @@ package LeetCode_JAVA;
 
 import org.junit.Test;
 
-public class TwoSum {
+public class TwoSum2 {
     public int[] twoSum(int[] nums, int target) {
         int i = 0, j = 0;
         for (i = 0; i < nums.length; i++) {
