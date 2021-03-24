@@ -22,7 +22,6 @@ public class A_Group_Java_C {
     }
 
     /**
-     * 对于dfs类题目必须熟练运用模板
      * @param team 传入的二维数组 20×5 的数据
      * @param index 遍历到第 index + 1号位(总共有5号位且index从0开始)
      * @param sum 遍历到第 index + 1号球员时的评分之和是多少
@@ -39,7 +38,7 @@ public class A_Group_Java_C {
             int value = team.get(i).get(index); // 得到第 i+1 号球员如果在 index+1 号位时
             vis[i] = true;                      // 将 i+1 号球员的vis置为true，代表第 i+1 号球员已经被选择了
             dfs(team, index + 1, sum + value); // dfs递归继续考虑index + 2号位的情况
-                                                          // 此时的评分之和要加上当前球员的评分value
+            // 此时的评分之和要加上当前球员的评分value
             vis[i] = false;   // 回溯模板中需要将引用变量复位
             // 可以理解为当上述dfs执行完了之后，i+1号球员为true的情况就已经执行完了，剩下的情况仍是i+1号球员为false的情况
         }

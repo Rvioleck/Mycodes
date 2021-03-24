@@ -4,7 +4,7 @@ public class ReverseBetween {
     public ListNode reverseBetween(ListNode head, int left, int right) {
         ListNode dummy = new ListNode();
         dummy.next = head;
-        ListNode l = head, r = head, preL = dummy, preR = dummy;
+        ListNode l = head, r = head, preL = dummy, preR;
         int delta = right - left;
         while (left-- != 1) {
             preL = l;
