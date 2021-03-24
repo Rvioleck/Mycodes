@@ -1,47 +1,56 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-public class test {
+public class test{
+    private int m, n;
 
-    private int count = 0;
-
-    private int getPathNum(boolean[][] graph, int n){
-        for (int i = 0; i < n; i++) {
-            bfs(graph, i, n);
+    private void dfs(int[][] maze, int x, int y, List<List<Integer>> path, int len){
+        if (x < 0 || y < 0 || x >= m || y >= n || maze[x][y] == 1){
+            return;
         }
-        return count;
-    }
-
-    private void bfs(boolean[][] graph, int i, int n) {
-        // 从结点i开始
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(i);
-        while (!queue.isEmpty()){
-            int v = queue.remove();
-            for (int j = v + 1; j < n; j++) {
-                if (graph[v][j]){
-                    count++;
-                    queue.add(j);
-                }
+        path.add(new ArrayList<Integer>(){
+            {
+                add(x);
+                add(y);
             }
+        });
+        maze[x][y] = 1;
+        if (x == m - 1 && y == n - 1){
+//            maze[x][y] = 1;
+            for (List<Integer> point : path) {
+                System.out.println(point);
+            }
+            System.out.println(len);
+            return;
         }
+        dfs(maze, x, y + 1, path, len + 1);
+        dfs(maze, x, y - 1, path, len + 1);
+        dfs(maze, x + 1, y, path, len + 1);
+        dfs(maze, x - 1, y, path, len + 1);
+        maze[x][y] = 0;
+        path.remove(path.size() - 1);
     }
 
-
-    public static void main(String[] args) {
-        boolean[][] graph = new boolean[7][7];
-        graph[0][1] = true;
-        graph[0][5] = true;
-        graph[1][2] = true;
-        graph[1][6] = true;
-        graph[2][3] = true;
-        graph[2][6] = true;
-        graph[3][4] = true;
-        graph[4][5] = true;
-        graph[4][6] = true;
-        graph[5][6] = true;
-        System.out.println(new test().getPathNum(graph, 7));
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int m = 4, n = 6;
+        int[][] maze = new int[][]{
+                {0,1,0,0,0,0},
+                {0,0,0,1,0,0},
+                {0,0,1,0,0,1},
+                {1,1,0,0,0,0}
+        };
+//        int m = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[][] maze = new int[m][n];
+//        for (int i = 0; i < m; i++){
+//            for (int j = 0; j < n; j++){
+//                maze[i][j] = sc.nextInt();
+//            }
+//        }
+        test obj = new test();
+        obj.m = m;
+        obj.n = n;
+        List<List<Integer>> path = new ArrayList<>();
+        obj.dfs(maze, 0, 0, path, -1);
     }
-
-
 }
