@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.DynamicProgram;
 
 public class Fib {
     public int fib(int n) {
