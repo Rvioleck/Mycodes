@@ -1,4 +1,4 @@
-package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
+package LeetCode_JAVA.DynamicProgram.KnapSackProblem.Zero_OneKnapSack;
 
 import java.util.Scanner;
 

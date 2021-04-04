@@ -1,6 +1,7 @@
-package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
+package LeetCode_JAVA.DynamicProgram.KnapSackProblem.Zero_OneKnapSack;
 
 /**
+ * https://leetcode-cn.com/problems/partition-equal-subset-sum/
  * 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
  * 可以将原问题等价于0-1背包问题：是否可以从输入数组中挑选出一些正整数，使得这些数的和'等于'整个数组元素的和的一半。
  * dp[i][j]表示前i个物品(下标1~i)中任意挑选元素使得其和为j true || false
