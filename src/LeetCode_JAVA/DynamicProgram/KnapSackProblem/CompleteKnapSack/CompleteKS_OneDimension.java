@@ -30,8 +30,6 @@ public class CompleteKS_OneDimension {
             for (int j = 0; j <= V; j++) {
                 if (j >= v[i]){
                     f[j] = Math.max(f[j], f[j - v[i]] + w[i]);
-                } else {
-                    f[j] = f[j];
                 }
             }
         }
