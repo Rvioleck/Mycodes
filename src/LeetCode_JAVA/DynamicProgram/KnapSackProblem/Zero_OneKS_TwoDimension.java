@@ -2,6 +2,10 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
 
 import java.util.Scanner;
 
+/**
+ * https://www.acwing.com/problem/content/2/
+ * 0-1背包问题，二维数组实现
+ */
 public class Zero_OneKS_TwoDimension {
 
     final int N = 1010;

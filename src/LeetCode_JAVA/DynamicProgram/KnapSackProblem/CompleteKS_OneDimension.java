@@ -3,6 +3,7 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
 import java.util.Scanner;
 
 /**
+ * https://www.acwing.com/problem/content/3/
  * 同于0-1背包问题，完全背包问题的空间优化也是
  * 通过"滚动数组"这个技巧，对二维数组进行【等价变换】
  */

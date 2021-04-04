@@ -3,6 +3,7 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
 import java.util.Scanner;
 
 /**
+ * https://www.acwing.com/problem/content/4/
  * 多重背包问题类似于0-1背包问题
  * 0-1背包问题是对每个物品选择0次或1次
  * 多重背包问题是对每个物品选择0次,1次,2次, ...,s次

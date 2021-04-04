@@ -3,6 +3,7 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
 import java.util.Scanner;
 
 /**
+ * https://www.acwing.com/problem/content/3/
  * 完全背包问题在0-1背包其问题的基础上，可以选择多个相同的物品
  * 其区别仅为动态规划转移方程的不同
  */

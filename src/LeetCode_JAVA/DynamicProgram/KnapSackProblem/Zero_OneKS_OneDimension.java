@@ -3,6 +3,7 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem;
 import java.util.Scanner;
 
 /**
+ * https://www.acwing.com/problem/content/2/
  * 对使用二维数组的0-1背包问题优化到使用一维数组的0-1背包问题
  * 本质上思想没有改变，仍为所有物品的遍历与所有体积的遍历
  * 但是其可以通过"滚动数组"这个技巧，对二维数组进行【等价变换】
