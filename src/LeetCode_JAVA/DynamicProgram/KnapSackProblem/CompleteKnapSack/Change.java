@@ -51,8 +51,8 @@ public class Change {
     }
 
     public static void main(String[] args) {
-        int[] coins = new int[]{1, 2, 5};
-        int amount = 5;
+        int[] coins = new int[]{1, 2, 3};
+        int amount = 4;
         System.out.println(new Change().change(amount, coins));
         System.out.println(new Change().change_optimise(amount, coins));
     }
