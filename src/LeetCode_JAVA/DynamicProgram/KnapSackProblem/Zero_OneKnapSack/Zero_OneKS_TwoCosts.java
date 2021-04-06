@@ -12,7 +12,7 @@ public class Zero_OneKS_TwoCosts {
         new Zero_OneKS_TwoCosts().dp();
     }
 
-    private void dp(){
+    private void dp() {
         final int N = 1010;
         int[][] dp = new int[N][N];
         Scanner sc = new Scanner(System.in);

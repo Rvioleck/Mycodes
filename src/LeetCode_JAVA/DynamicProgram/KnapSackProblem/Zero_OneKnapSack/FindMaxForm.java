@@ -5,15 +5,15 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem.Zero_OneKnapSack;
  * 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
  * 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
  * 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集
- *
+ * <p>
  * 其为二维费用的0-1背包问题
  */
 public class FindMaxForm {
 
     /**
      * @param strs 二进制字符串数组
-     * @param m 整数m
-     * @param n 整数n
+     * @param m    整数m
+     * @param n    整数n
      * @return 返回 strs的最大子集的大小，该子集中最多有m个0和n个1
      */
     public int findMaxForm(String[] strs, int m, int n) {
@@ -21,7 +21,7 @@ public class FindMaxForm {
         for (String str : strs) {
             int zero = 0, one = 0;
             for (int i = 0; i < str.length(); i++) {
-                if (str.charAt(i) == '0'){
+                if (str.charAt(i) == '0') {
                     zero++;
                 } else {
                     one++;

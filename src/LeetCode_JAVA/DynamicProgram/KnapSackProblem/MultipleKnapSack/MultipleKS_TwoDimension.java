@@ -33,7 +33,7 @@ public class MultipleKS_TwoDimension {
             for (int j = 0; j <= V; j++) {
                 // 多一层for循环 本质上是求f[i][j] = max(f[i - 1][j], f[i - 1][j - v] + w, ..., f[i - 1][j - s*v] + s*w)
                 for (int k = 0; k <= s[i]; k++) { // 对于0-1背包实际上就是for循环的终止条件为k <= 1
-                    if (k * v[i] <= j){
+                    if (k * v[i] <= j) {
                         f[i][j] = Math.max(f[i][j], f[i - 1][j - k * v[i]] + k * w[i]);
                     }
                 }

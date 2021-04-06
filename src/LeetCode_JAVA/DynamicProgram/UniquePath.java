@@ -20,7 +20,7 @@ public class UniquePath {
         return dp[m][n];
     }
 
-    public int uniquePaths_optimize(int m, int n){
+    public int uniquePaths_optimize(int m, int n) {
         // 二维情况下的等价代换(滚动数组)
         int[] dp = new int[n + 1];
         dp[1] = 1;

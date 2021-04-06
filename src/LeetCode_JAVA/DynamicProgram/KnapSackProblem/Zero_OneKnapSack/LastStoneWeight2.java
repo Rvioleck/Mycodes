@@ -7,7 +7,7 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem.Zero_OneKnapSack;
  */
 public class LastStoneWeight2 {
 
-    public int lastStoneWeightII(int[] stones){
+    public int lastStoneWeightII(int[] stones) {
         int n = stones.length;
         int allWeight = 0;
         for (int stone : stones) {
@@ -19,7 +19,7 @@ public class LastStoneWeight2 {
             int stone = stones[i - 1];
             for (int j = 0; j <= m; j++) {
                 dp[i][j] = dp[i - 1][j];
-                if (j >= stone){
+                if (j >= stone) {
                     dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - stone] + stone);
                 }
             }
@@ -39,7 +39,7 @@ public class LastStoneWeight2 {
         for (int i = 1; i <= n; i++) {
             int stone = stones[i - 1];
             for (int j = m; j >= 0; j--) {
-                if (j >= stone){
+                if (j >= stone) {
                     dp[j] = Math.max(dp[j], dp[j - stone] + stone);
                 }
             }
@@ -49,7 +49,7 @@ public class LastStoneWeight2 {
 
     public static void main(String[] args) {
         int[] stones = new int[]{
-                57,32,40,27,35,61
+                57, 32, 40, 27, 35, 61
         };
         System.out.println(new LastStoneWeight2().lastStoneWeightII(stones));
         System.out.println(new LastStoneWeight2().lastStoneWeightII_optimise(stones));

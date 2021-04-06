@@ -1,6 +1,5 @@
 package LeetCode_JAVA.DynamicProgram.KnapSackProblem.CompleteKnapSack.SimilarToCKS;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

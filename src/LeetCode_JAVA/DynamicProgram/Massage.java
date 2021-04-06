@@ -4,10 +4,10 @@ public class Massage {
 
     public int massage(int[] nums) {
         int len = nums.length;
-        if (len < 1){
+        if (len < 1) {
             return 0;
         }
-        if (len == 1){
+        if (len == 1) {
             return nums[0];
         }
         int even = 0, odd = nums[0];
@@ -20,7 +20,7 @@ public class Massage {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Massage().massage(new int[]{2,1,4,5,3,1,1,3}));
+        System.out.println(new Massage().massage(new int[]{2, 1, 4, 5, 3, 1, 1, 3}));
     }
 
 }

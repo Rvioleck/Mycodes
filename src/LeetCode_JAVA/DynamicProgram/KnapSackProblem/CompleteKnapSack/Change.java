@@ -6,10 +6,10 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem.CompleteKnapSack;
  * 典型的完全背包问题
  * 讨论组合个数时的状态转移方程为 dp[j] = dp[j] + dp[j - coin], dp[i][j] = dp[i - 1][j] + dp[i][j - coin];
  * 递推式和https://leetcode-cn.com/problems/target-sum/此题完全相同，但是本题本质是完全背包，那题是0-1背包
- *
- *  dp[i][j] = dp[i - 1][j] + dp[i - 1][j - coin] + dp[i - 1][j - 2 * coin] + ... + dp[i - 1][j - k * coin]
- *  dp[i][j - coin] = dp[i - 1][j - coin] + dp[i - 1][j - 2 * coin] + ... + dp[i - 1][j - k * coin]
- *  dp[i][j] = dp[i - 1][j] + dp[i][j - coin] 推导式与其巧合相同
+ * <p>
+ * dp[i][j] = dp[i - 1][j] + dp[i - 1][j - coin] + dp[i - 1][j - 2 * coin] + ... + dp[i - 1][j - k * coin]
+ * dp[i][j - coin] = dp[i - 1][j - coin] + dp[i - 1][j - 2 * coin] + ... + dp[i - 1][j - k * coin]
+ * dp[i][j] = dp[i - 1][j] + dp[i][j - coin] 推导式与其巧合相同
  */
 
 public class Change {
@@ -24,7 +24,7 @@ public class Change {
             for (int j = 0; j <= amount; j++) {
                 // dp[i][j] = ①不选物品i的组合数(正好缺0个)，②正好缺1个coin的组合数,...,③正好缺k个coin的组合数，求和所得
                 // 转移方程化简如下
-                if (j >= coin){
+                if (j >= coin) {
                     dp[i][j] = dp[i - 1][j] + dp[i][j - coin];
                 } else {
                     dp[i][j] = dp[i - 1][j];
@@ -42,7 +42,7 @@ public class Change {
         for (int i = 1; i <= n; i++) {
             int coin = coins[i - 1];
             for (int j = 0; j <= amount; j++) {
-                if (j >= coin){
+                if (j >= coin) {
                     dp[j] = dp[j] + dp[j - coin];
                 }
             }

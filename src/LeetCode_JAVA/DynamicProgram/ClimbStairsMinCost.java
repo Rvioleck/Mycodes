@@ -8,8 +8,8 @@ public class ClimbStairsMinCost {
         System.out.println(new ClimbStairsMinCost().climbStairs(cost, n));
     }
 
-    public int climbStairs(int[] cost, int n){
-        if (n <= 1){
+    public int climbStairs(int[] cost, int n) {
+        if (n <= 1) {
             return 0;
         }
         int[] dp = new int[n]; //dp[i]爬到第i层花费的最少体力

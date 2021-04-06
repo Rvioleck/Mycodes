@@ -27,7 +27,7 @@ public class MultipleKS_OneDimension {
             int v = sc.nextInt(), w = sc.nextInt(), s = sc.nextInt();
             for (int j = V; j >= 0; j--) {
                 for (int k = 0; k <= s; k++) {
-                    if (j >= k * v){
+                    if (j >= k * v) {
                         f[j] = Math.max(f[j], f[j - k * v] + k * w);
                     }
                 }

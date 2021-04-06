@@ -11,14 +11,14 @@ public class CanPartition {
 
     public boolean canPartition(int[] nums) {
         int n = nums.length;
-        if (n <= 1){
+        if (n <= 1) {
             return false;
         }
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-        if (sum % 2 == 1){
+        if (sum % 2 == 1) {
             return false;
         }
         int target = sum / 2;
@@ -37,17 +37,17 @@ public class CanPartition {
         return dp[n - 1][target];
     }
 
-    public boolean canPartition_OneDimension(int[] nums){
+    public boolean canPartition_OneDimension(int[] nums) {
         // 二维情形下的等价变换
         int n = nums.length;
-        if (n <= 1){
+        if (n <= 1) {
             return false;
         }
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-        if (sum % 2 == 1){
+        if (sum % 2 == 1) {
             return false;
         }
         int target = sum / 2;
@@ -55,7 +55,7 @@ public class CanPartition {
         // dp[i][j]表示从下标集合{0..i}中任意挑选元素使得其和为j
         for (int i = 1; i < n; i++) {
             for (int j = target; j >= 1; j--) {
-                if (j >= nums[i]){
+                if (j >= nums[i]) {
                     dp[j] = dp[j] || dp[j - nums[i]];
                 }
             }

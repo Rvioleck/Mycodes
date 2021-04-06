@@ -6,21 +6,21 @@ package LeetCode_JAVA.DynamicProgram.KnapSackProblem.Zero_OneKnapSack;
  * 可以将原问题等价于0-1背包问题：是否可以从输入数组中挑选出一些正整数，使得这些数的和'等于'整个数组元素的和的一半。
  * dp[i][j]表示前i个物品(下标1~i)中任意挑选元素使得其和为j true || false
  * 其状态转移方程为dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
- *
+ * <p>
  * 其与CanPartition的主要区别在于dp[i][j]数组，本dp数组的i表示前i个物品，原dp数组的i表示下标0~i的前i+1个物品
  */
 public class CanPartition2 {
 
     public boolean canPartition(int[] nums) {
         int n = nums.length;
-        if (n <= 1){
+        if (n <= 1) {
             return false;
         }
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-        if (sum % 2 == 1){
+        if (sum % 2 == 1) {
             return false;
         }
         int target = sum / 2;
@@ -38,17 +38,17 @@ public class CanPartition2 {
         return dp[n][target];
     }
 
-    public boolean canPartition_OneDimension(int[] nums){
+    public boolean canPartition_OneDimension(int[] nums) {
         // 二维情形下的等价变换
         int n = nums.length;
-        if (n <= 1){
+        if (n <= 1) {
             return false;
         }
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-        if (sum % 2 == 1){
+        if (sum % 2 == 1) {
             return false;
         }
         int target = sum / 2;

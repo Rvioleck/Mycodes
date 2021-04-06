@@ -13,12 +13,12 @@ public class ClimbStairs {
         return dp[n];
     }
 
-    public int climbStairs_optimize(int n){
+    public int climbStairs_optimize(int n) {
         int dp1 = 1, dp2 = 2;
-        if (n == 1){
+        if (n == 1) {
             return dp1;
         }
-        if (n == 2){
+        if (n == 2) {
             return dp2;
         }
         int dpNext = 0;

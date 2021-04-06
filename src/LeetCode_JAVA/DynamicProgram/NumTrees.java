@@ -14,9 +14,9 @@ public class NumTrees {
     public int numTrees(int n) {
         long res = 1;
         for (int i = 1; i < n; i++) {
-            res = 2 * (2 * i + 1) * res / (i + 2);
+            res = 2 * (2L * i + 1) * res / (i + 2);
         }
-        return (int)res;
+        return (int) res;
     }
 
     public static void main(String[] args) {

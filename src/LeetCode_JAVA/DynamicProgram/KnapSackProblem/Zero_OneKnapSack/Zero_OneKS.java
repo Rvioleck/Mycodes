@@ -10,7 +10,7 @@ public class Zero_OneKS {
     final int N = 1010;
     int[] f = new int[N];
 
-    private void dp(){
+    private void dp() {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int V = sc.nextInt();
@@ -18,7 +18,7 @@ public class Zero_OneKS {
             int v = sc.nextInt();
             int w = sc.nextInt();
             for (int j = V; j >= 0; j--) {
-                if (j >= v){
+                if (j >= v) {
                     f[j] = Math.max(f[j], f[j - v] + w);
                 }
             }
