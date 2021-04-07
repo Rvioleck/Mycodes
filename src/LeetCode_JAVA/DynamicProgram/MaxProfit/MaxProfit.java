@@ -1,4 +1,4 @@
-package LeetCode_JAVA.DynamicProgram;
+package LeetCode_JAVA.DynamicProgram.MaxProfit;
 
 
 /**
