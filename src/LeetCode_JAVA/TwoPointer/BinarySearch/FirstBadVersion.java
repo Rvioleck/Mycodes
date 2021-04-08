@@ -1,4 +1,4 @@
-package LeetCode_JAVA.BinarySearch;
+package LeetCode_JAVA.TwoPointer.BinarySearch;
 
 /**
  * https://leetcode-cn.com/problems/first-bad-version/
