@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.BinarySearch;
 
 public class MySqrt {
     public int mySqrt(int x) {
