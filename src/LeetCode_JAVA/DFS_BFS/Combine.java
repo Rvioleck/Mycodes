@@ -3,6 +3,10 @@ package LeetCode_JAVA.DFS_BFS;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://leetcode-cn.com/problems/combinations/submissions/
+ * 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+ */
 public class Combine {
     private int n, k;
 
