@@ -1,4 +1,4 @@
-package LeetCode_JAVA.TwoPointer;
+package LeetCode_JAVA.TwoPointer.BinarySearch;
 
 public class FindMin {
 
