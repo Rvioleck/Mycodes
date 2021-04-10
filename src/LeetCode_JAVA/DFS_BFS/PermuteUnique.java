@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Permute2 {
+/**
+ * https://leetcode-cn.com/problems/permutations-ii/
+ * 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
+ */
+public class PermuteUnique {
     private void dfs(int[] nums, List<Integer> path, List<List<Integer>> res, boolean[] vis) {
         if (path.size() == nums.length) {
             res.add(new ArrayList<>(path));
@@ -13,6 +17,7 @@ public class Permute2 {
         for (int i = 0; i < nums.length; i++) {
             if (vis[i]) continue;
             if (i > 0 && nums[i] == nums[i - 1] && !vis[i - 1]) continue;
+            // vis[i - 1] = false为树层上去重，vis[i - 1] = true为树枝上去重
             path.add(nums[i]);
             vis[i] = true;
             dfs(nums, path, res, vis);
@@ -32,6 +37,6 @@ public class Permute2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Permute2().permuteUnique(new int[]{1, 1, 2}));
+        System.out.println(new PermuteUnique().permuteUnique(new int[]{1, 1, 2}));
     }
 }
