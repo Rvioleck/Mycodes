@@ -19,7 +19,7 @@ public class IsAnagram {
         // 数组代替hashTable
         int[] ch = new int[26];
         int sLen = s.length(), tLen = t.length();
-        if (sLen != tLen){
+        if (sLen != tLen) {
             return false;
         }
         for (int i = 0; i < sLen; i++) {
@@ -29,7 +29,7 @@ public class IsAnagram {
         for (int i = 0; i < tLen; i++) {
             char c = t.charAt(i);
             ch[c - 'a']--;
-            if (ch[c - 'a'] < 0){
+            if (ch[c - 'a'] < 0) {
                 return false;
             }
         }
@@ -51,7 +51,7 @@ public class IsAnagram {
         return sMap.equals(tMap);
     }
 
-    public boolean isAnagram2(String s, String t){
+    public boolean isAnagram2(String s, String t) {
         HashMap<Character, Integer> map = new HashMap<>();
         int len = s.length();
         for (int i = 0; i < len; i++) {
@@ -61,11 +61,11 @@ public class IsAnagram {
         int len2 = t.length();
         for (int i = 0; i < len2; i++) {
             char ch = t.charAt(i);
-            if (!map.containsKey(ch)){
+            if (!map.containsKey(ch)) {
                 return false;
             } else {
                 map.put(ch, map.get(ch) - 1);
-                if (map.get(ch) == 0){
+                if (map.get(ch) == 0) {
                     map.remove(ch);
                 }
             }

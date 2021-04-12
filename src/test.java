@@ -31,26 +31,5 @@ public class test{
     }
 
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int m = 4, n = 6;
-        int[][] maze = new int[][]{
-                {0,1,0,0,0,0},
-                {0,0,0,1,0,0},
-                {0,0,1,0,0,1},
-                {1,1,0,0,0,0}
-        };
-//        int m = sc.nextInt();
-//        int n = sc.nextInt();
-//        int[][] maze = new int[m][n];
-//        for (int i = 0; i < m; i++){
-//            for (int j = 0; j < n; j++){
-//                maze[i][j] = sc.nextInt();
-//            }
-//        }
-        test obj = new test();
-        obj.m = m;
-        obj.n = n;
-        List<List<Integer>> path = new ArrayList<>();
-        obj.dfs(maze, 0, 0, path, -1);
     }
 }

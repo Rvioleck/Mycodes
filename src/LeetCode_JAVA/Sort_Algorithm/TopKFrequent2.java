@@ -11,16 +11,16 @@ public class TopKFrequent2 {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
         PriorityQueue<String> heap = new PriorityQueue<>((x, y) ->
-            (map.get(x).equals(map.get(y)) ? y.compareTo(x) : map.get(x) - map.get(y))
+                (map.get(x).equals(map.get(y)) ? y.compareTo(x) : map.get(x) - map.get(y))
         );
-        for (String word : map.keySet()){
+        for (String word : map.keySet()) {
             heap.offer(word);
-            if (heap.size() > k){
+            if (heap.size() > k) {
                 heap.poll();
             }
         }
         List<String> res = new ArrayList<>();
-        while (!heap.isEmpty()){
+        while (!heap.isEmpty()) {
             res.add(0, heap.poll());
         }
         return res;

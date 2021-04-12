@@ -10,22 +10,22 @@ public class DecodeString {
         StringBuilder decode = new StringBuilder();
         for (int i = 0; i < sLen; i++) {
             char ch = s.charAt(i);
-            if (ch != ']'){
+            if (ch != ']') {
                 stack.push(ch);
             } else {
                 StringBuilder repeat = new StringBuilder();
                 char popOne = stack.pop();
-                while (popOne != '['){
+                while (popOne != '[') {
                     repeat.append(popOne);
                     popOne = stack.pop();
                 }
                 StringBuilder digit = new StringBuilder(stack.pop().toString());
-                while (!stack.isEmpty() && Character.isDigit(stack.peek())){
+                while (!stack.isEmpty() && Character.isDigit(stack.peek())) {
                     digit.append(stack.pop().toString());
                 }
                 int count = Integer.parseInt(String.valueOf(digit.reverse()));
                 int repLen = repeat.length();
-                while (count-- != 0){
+                while (count-- != 0) {
                     for (int j = repLen - 1; j >= 0; j--) {
                         stack.push(repeat.charAt(j));
                     }

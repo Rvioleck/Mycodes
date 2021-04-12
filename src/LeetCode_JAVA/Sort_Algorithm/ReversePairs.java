@@ -4,7 +4,7 @@ public class ReversePairs {
 
     public int reversePairs(int[] nums) {
         int len = nums.length;
-        if (len < 2){
+        if (len < 2) {
             return 0;
         }
         int[] temp = new int[len];
@@ -27,11 +27,11 @@ public class ReversePairs {
         int i = left, j = mid + 1;
         int count = 0;
         for (int k = left; k <= right; k++) {
-            if (i > mid){
+            if (i > mid) {
                 nums[k] = temp[j++];
-            } else if (j > right){
+            } else if (j > right) {
                 nums[k] = temp[i++];
-            } else if (temp[i] <= temp[j]){
+            } else if (temp[i] <= temp[j]) {
                 nums[k] = temp[i++];
             } else {
                 nums[k] = temp[j++];

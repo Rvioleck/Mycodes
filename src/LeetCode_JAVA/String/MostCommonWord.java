@@ -21,7 +21,7 @@ public class MostCommonWord {
         for (Map.Entry elem : map.entrySet()) {
             String word = (String) elem.getKey();
             int count = (int) elem.getValue();
-            if (count > max){
+            if (count > max) {
                 max = count;
                 res = word;
             }

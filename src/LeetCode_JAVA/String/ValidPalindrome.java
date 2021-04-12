@@ -11,15 +11,15 @@ public class ValidPalindrome {
 
     private void dfs(String s, int i, int j, int count) {
         if (res) return;
-        while (i < j && s.charAt(i) == s.charAt(j)){
+        while (i < j && s.charAt(i) == s.charAt(j)) {
             i++;
             j--;
         }
-        if (i >= j){
+        if (i >= j) {
             res = true;
             return;
         }
-        if (count >= 1){
+        if (count >= 1) {
             dfs(s, i + 1, j, count - 1);
             dfs(s, i, j - 1, count - 1);
         }

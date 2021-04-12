@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LetterCombinations {
-    private Map<Character, String> phoneMap = new HashMap() {
+    private final Map<Character, String> phoneMap = new HashMap() {
         {
             put('2', "abc");
             put('3', "def");

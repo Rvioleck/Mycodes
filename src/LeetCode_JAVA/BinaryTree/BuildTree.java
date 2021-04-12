@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class BuildTree {
 
-    public TreeNode buildTree(int[] preorder, int[] inorder){
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
         int preLen = preorder.length;
         int inLen = inorder.length;
         Map<Integer, Integer> map = new HashMap<>(preLen);
@@ -17,7 +17,7 @@ public class BuildTree {
 
     private TreeNode buildTree(int[] preorder, int preLeft, int preRight,
                                Map<Integer, Integer> map, int inLeft, int inRight) {
-        if (preLeft > preRight || inLeft > inRight){
+        if (preLeft > preRight || inLeft > inRight) {
             return null;
         }
         int rootVal = preorder[preLeft];
@@ -31,7 +31,7 @@ public class BuildTree {
     }
 
     public static void main(String[] args) {
-        TreeNode t = new BuildTree().buildTree(new int[]{3,9,20,15,7} , new int[]{9,3,15,20,7});
+        TreeNode t = new BuildTree().buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
         System.out.println(t);
     }
 }

@@ -10,7 +10,7 @@ public class FindKthLargest {
 
     private int quickSort(int[] nums, int left, int right, int k) {
         int pivotIdx = partition(nums, left, right);
-        if (pivotIdx == k - 1){
+        if (pivotIdx == k - 1) {
             return nums[pivotIdx];
         }
         return pivotIdx > k - 1 ?
@@ -25,12 +25,12 @@ public class FindKthLargest {
         nums[i] = nums[left];
         nums[left] = temp;
         int pivot = nums[left];
-        while (left < right){
-            while (left < right && nums[right] <= pivot){
+        while (left < right) {
+            while (left < right && nums[right] <= pivot) {
                 right--;
             }
             nums[left] = nums[right];
-            while (left < right && nums[left] >= pivot){
+            while (left < right && nums[left] >= pivot) {
                 left++;
             }
             nums[right] = nums[left];
@@ -40,7 +40,7 @@ public class FindKthLargest {
     }
 
     public static void main(String[] args) {
-        System.out.println(new FindKthLargest().findKthLargest(new int[]{1,5,4,8,7,3,2,9}, 3));
+        System.out.println(new FindKthLargest().findKthLargest(new int[]{1, 5, 4, 8, 7, 3, 2, 9}, 3));
     }
 
 }

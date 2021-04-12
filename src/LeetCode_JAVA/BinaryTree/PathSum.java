@@ -7,14 +7,14 @@ public class PathSum {
     private final List<List<Integer>> res = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
 
-    private void dfs(TreeNode root, int targetSum){
-        if (root == null){
+    private void dfs(TreeNode root, int targetSum) {
+        if (root == null) {
             return;
         }
         targetSum -= root.val;
         path.add(root.val);
-        if (root.left == null && root.right == null){
-            if (targetSum == 0){
+        if (root.left == null && root.right == null) {
+            if (targetSum == 0) {
                 res.add(new ArrayList<>(path));
             }
         }

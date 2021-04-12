@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class InterSection {
 
     public static void main(String[] args) {
-        int[] nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
+        int[] nums1 = {4, 9, 5}, nums2 = {9, 4, 9, 8, 4};
         int[] res = new InterSection().intersection(nums1, nums2);
         for (int num : res) {
             System.out.print(num + " ");
@@ -23,7 +23,7 @@ public class InterSection {
             set1.add(num1);
         }
         for (int num2 : nums2) {
-            if (set1.contains(num2)){
+            if (set1.contains(num2)) {
                 set2.add(num2);
             }
         }

@@ -10,16 +10,16 @@ public class BuildTree3 {
     }
 
     private TreeNode buildTree(int preLeft, int preRight, int postLeft, int postRight) {
-        if (preLeft > preRight || postLeft > postRight){
+        if (preLeft > preRight || postLeft > postRight) {
             return null;
         }
         TreeNode root = new TreeNode(pre[preLeft]);
-        if (preLeft == preRight){ // 防止下面preLeft + 1溢出
+        if (preLeft == preRight) { // 防止下面preLeft + 1溢出
             return root;
         }
 
         int index = postLeft; // 此时的index已经是postLeft的偏移量了
-        while (pre[preLeft + 1] != post[index]){
+        while (pre[preLeft + 1] != post[index]) {
             index++;
         }
 

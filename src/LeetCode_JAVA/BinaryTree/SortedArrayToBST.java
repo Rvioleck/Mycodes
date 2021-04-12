@@ -7,7 +7,7 @@ public class SortedArrayToBST {
     }
 
     private TreeNode build(int[] nums, int left, int right) {
-        if (left > right){
+        if (left > right) {
             return null;
         }
         int mid = (left + right) / 2;
@@ -18,7 +18,7 @@ public class SortedArrayToBST {
     }
 
     public static void main(String[] args) {
-        TreeNode t = new SortedArrayToBST().sortedArrayToBST(new int[]{-10,-3,0,5,9});
+        TreeNode t = new SortedArrayToBST().sortedArrayToBST(new int[]{-10, -3, 0, 5, 9});
         System.out.println(t);
     }
 

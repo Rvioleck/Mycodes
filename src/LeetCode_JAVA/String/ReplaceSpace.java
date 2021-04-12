@@ -14,7 +14,7 @@ public class ReplaceSpace {
         StringBuilder sb = new StringBuilder(s);
         String rep = "%20";
         for (int i = sb.length() - 1; i >= 0; i--) {
-            if (sb.charAt(i) == ' '){
+            if (sb.charAt(i) == ' ') {
                 sb.deleteCharAt(i);
                 sb.insert(i, rep);
             }

@@ -8,8 +8,9 @@ import java.util.Queue;
 public class LevelOrderZigzag {
 
     private final List<List<Integer>> list = new ArrayList<>();
+
     public List<List<Integer>> levelOrderZigzag(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return list;
         }
         Queue<TreeNode> queue = new LinkedList<>();
@@ -17,17 +18,17 @@ public class LevelOrderZigzag {
         queue.offer(root);
         int size = queue.size();
         boolean reverse = false;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             List<Integer> oneLevel = new ArrayList<>();
-            while (size-- > 0){
+            while (size-- > 0) {
                 node = queue.remove();
-                if (node.left != null){
+                if (node.left != null) {
                     queue.offer(node.left);
                 }
-                if (node.right != null){
+                if (node.right != null) {
                     queue.offer(node.right);
                 }
-                if (!reverse){
+                if (!reverse) {
                     oneLevel.add(node.val);
                 } else {
                     oneLevel.add(0, node.val);

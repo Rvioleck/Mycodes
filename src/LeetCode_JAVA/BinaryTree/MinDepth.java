@@ -1,7 +1,5 @@
 package LeetCode_JAVA.BinaryTree;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,29 +8,30 @@ public class MinDepth {
     class QueueNode {
         TreeNode root;
         Integer depth;
-        QueueNode(TreeNode root, int depth){
+
+        QueueNode(TreeNode root, int depth) {
             this.root = root;
             this.depth = depth;
         }
     }
 
     public int minDepth(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         Queue<QueueNode> queue = new LinkedList<>();
         queue.offer(new QueueNode(root, 1));
         QueueNode node;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             node = queue.remove();
             int depth = node.depth;
-            if (node.root.left == null && node.root.right == null){
+            if (node.root.left == null && node.root.right == null) {
                 return node.depth;
             }
-            if (node.root.left != null){
+            if (node.root.left != null) {
                 queue.offer(new QueueNode(node.root.left, depth + 1));
             }
-            if (node.root.right != null){
+            if (node.root.right != null) {
                 queue.offer(new QueueNode(node.root.right, depth + 1));
             }
         }

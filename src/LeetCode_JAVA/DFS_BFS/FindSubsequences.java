@@ -1,6 +1,9 @@
 package LeetCode_JAVA.DFS_BFS;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class FindSubsequences {
 
@@ -15,7 +18,7 @@ public class FindSubsequences {
     }
 
     private void dfs(List<List<Integer>> res, List<Integer> one, int[] nums, int index) {
-        if (one.size() >= 2 && one.size() <= n){
+        if (one.size() >= 2 && one.size() <= n) {
             res.add(new ArrayList<>(one));
         }
         // 借助 set 对 [idx + 1, nums.length - 1] 范围内的数去重。
@@ -34,7 +37,7 @@ public class FindSubsequences {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,1,1,1};
+        int[] nums = {1, 2, 1, 1, 1};
         System.out.println(new FindSubsequences().findSubsequences(nums));
     }
 }

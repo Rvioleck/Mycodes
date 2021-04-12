@@ -1,7 +1,5 @@
 package LeetCode_JAVA.Sort_Algorithm;
 
-import java.util.Arrays;
-
 public class MinNumber {
 
     public String minNumber(int[] nums) {
@@ -12,7 +10,7 @@ public class MinNumber {
 //        Arrays.sort(strs, (x, y) -> (x + y).compareTo(y + x));
         quickSort(strs, 0, strs.length - 1);
         StringBuilder res = new StringBuilder();
-        for (String str : strs){
+        for (String str : strs) {
             res.append(str);
         }
         return res.toString();
@@ -22,12 +20,12 @@ public class MinNumber {
         if (left >= right) return;
         String pivot = strs[left];
         int i = left, j = right;
-        while (i < j){
-            while (i < j && (strs[j] + pivot).compareTo(pivot + strs[j]) >= 0){
+        while (i < j) {
+            while (i < j && (strs[j] + pivot).compareTo(pivot + strs[j]) >= 0) {
                 j--;
             }
             strs[i] = strs[j];
-            while (i < j && (strs[i] + pivot).compareTo(pivot + strs[i]) <= 0){
+            while (i < j && (strs[i] + pivot).compareTo(pivot + strs[i]) <= 0) {
                 i++;
             }
             strs[j] = strs[i];

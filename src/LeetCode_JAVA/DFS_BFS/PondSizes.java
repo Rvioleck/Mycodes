@@ -3,7 +3,7 @@ package LeetCode_JAVA.DFS_BFS;
 import java.util.*;
 
 public class PondSizes {
-    private List<Integer> res = new ArrayList<>();
+    private final List<Integer> res = new ArrayList<>();
     private int curSize = 0;
     private int m, n;
 

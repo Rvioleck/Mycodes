@@ -9,7 +9,7 @@ public class FindAnagrams {
     public List<Integer> findAnagrams(String s, String p) {
         int pLen = p.length();
         int sLen = s.length();
-        if (pLen > sLen){
+        if (pLen > sLen) {
             return new ArrayList<>();
         }
         List<Integer> res = new ArrayList<>();
@@ -24,22 +24,22 @@ public class FindAnagrams {
             mapString.put(ch, mapString.getOrDefault(ch, 0) + 1);
         }
         int index = pLen;
-        while (index < sLen){
-            if (mapPattern.equals(mapString)){
+        while (index < sLen) {
+            if (mapPattern.equals(mapString)) {
                 res.add(index - pLen);
             }
             char chBefore = s.charAt(index - pLen);
             char chAfter = s.charAt(index);
-            if (chBefore != chAfter){
+            if (chBefore != chAfter) {
                 mapString.put(chBefore, mapString.get(chBefore) - 1);
-                if (mapString.get(chBefore) == 0){
+                if (mapString.get(chBefore) == 0) {
                     mapString.remove(chBefore);
                 }
                 mapString.put(chAfter, mapString.getOrDefault(chAfter, 0) + 1);
             }
             index++;
         }
-        if (mapPattern.equals(mapString)){
+        if (mapPattern.equals(mapString)) {
             res.add(index - pLen);
         }
         return res;

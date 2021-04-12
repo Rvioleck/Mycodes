@@ -7,11 +7,11 @@ public class TwoSum2 {
 
     public int[] twoSum(int[] numbers, int target) {
         int i = 0, j = numbers.length - 1;
-        while (i <= j){
+        while (i <= j) {
             int left = numbers[i], right = numbers[j];
-            if (left + right > target){
+            if (left + right > target) {
                 j--;
-            } else if(left + right < target){
+            } else if (left + right < target) {
                 i++;
             } else {
                 return new int[]{i + 1, j + 1};

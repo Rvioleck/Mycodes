@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class IslandPerimeter2 {
 
-    class Point{
+    class Point {
         int x;
         int y;
 
@@ -34,9 +34,10 @@ public class IslandPerimeter2 {
         int n = grid[0].length;
         vis = new boolean[m][n];
         int i = 0, j = 0;
-        outer : for (i = 0; i < m; i++) {
+        outer:
+        for (i = 0; i < m; i++) {
             for (j = 0; j < n; j++) {
-                if (grid[i][j] == 1){
+                if (grid[i][j] == 1) {
                     break outer;
                 }
             }
@@ -44,17 +45,17 @@ public class IslandPerimeter2 {
         int count = 0;
         Queue<Point> queue = new LinkedList<>();
         queue.add(new Point(i, j));
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Point point = queue.poll();
             count += 4;
             int x = point.x, y = point.y;
             for (int k = 0; k < 4; k++) {
                 i = x + delta[0][k];
                 j = y + delta[1][k];
-                if (satisfy(grid, i, j)){
+                if (satisfy(grid, i, j)) {
                     count -= 2;
                     point = new Point(i, j);
-                    if (!queue.contains(point)){
+                    if (!queue.contains(point)) {
                         queue.add(point);
                     }
                 }

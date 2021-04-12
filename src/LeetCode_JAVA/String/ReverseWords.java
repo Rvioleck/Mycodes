@@ -4,8 +4,8 @@ public class ReverseWords {
 
     public String reverseWords(String s) {
         String[] words = s.split(" ");
-        int left = 0, right = words.length -1;
-        while (left < right){
+        int left = 0, right = words.length - 1;
+        while (left < right) {
             String temp = words[left];
             words[left] = words[right];
             words[right] = temp;
@@ -14,7 +14,7 @@ public class ReverseWords {
         }
         StringBuilder res = new StringBuilder();
         for (String word : words) {
-            if (!word.equals("")){
+            if (!word.equals("")) {
                 res.append(word).append(" ");
             }
         }
@@ -22,7 +22,7 @@ public class ReverseWords {
     }
 
     public static void main(String[] args) {
-        String s = new String("the sky is  blue!");
+        String s = "the sky is  blue!";
         s = new ReverseWords().reverseWords(s);
         System.out.println(s);
     }

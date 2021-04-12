@@ -7,16 +7,16 @@ public class TwoSum3 {
     public int[] twoSum(int[] nums, int target) {
         int i = 0, j = nums.length - 1;
         int last = j;
-        while (target < nums[j]){
+        while (target < nums[j]) {
             last = j;
             j = (i + j) / 2;
         }
         j = last;
-        while (i <= j){
+        while (i <= j) {
             int left = nums[i], right = nums[j];
-            if (left + right < target){
+            if (left + right < target) {
                 i++;
-            } else if (left + right > target){
+            } else if (left + right > target) {
                 j--;
             } else {
                 return new int[]{left, right};

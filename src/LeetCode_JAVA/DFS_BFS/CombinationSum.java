@@ -9,16 +9,16 @@ import java.util.List;
  * 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
  * candidates 中的数字可以无限制重复被选取。
  * 说明：
- *     所有数字（包括 target）都是正整数。
- *     解集不能包含重复的组合。
+ * 所有数字（包括 target）都是正整数。
+ * 解集不能包含重复的组合。
  */
 public class CombinationSum {
-    public void dfs(List<List<Integer>> res, List<Integer> one, int[] candidates, int sum, int target){
-        if (sum == target){
+    public void dfs(List<List<Integer>> res, List<Integer> one, int[] candidates, int sum, int target) {
+        if (sum == target) {
             res.add(new ArrayList<>(one));
             return;
         }
-        for (int i : candidates){
+        for (int i : candidates) {
             if (one.size() >= 1 && i < one.get(one.size() - 1)) continue;
             if (sum + i > target) break;
             one.add(i);

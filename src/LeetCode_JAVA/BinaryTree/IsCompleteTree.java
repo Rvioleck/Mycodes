@@ -10,14 +10,14 @@ public class IsCompleteTree {
         TreeNode node;
         queue.offer(root);
         boolean tag = false;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             node = queue.poll();
-            if (node == null){
-                if (!tag){
+            if (node == null) {
+                if (!tag) {
                     tag = true;
                 }
             } else {
-                if (tag){
+                if (tag) {
                     return false;
                 }
             }

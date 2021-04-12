@@ -11,10 +11,10 @@ public class CanPermutePalindrome {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
         int oddCount = 0;
-        for (int count : map.values()){
-            if (count % 2 != 0){
+        for (int count : map.values()) {
+            if (count % 2 != 0) {
                 oddCount++;
-                if (oddCount > 1){
+                if (oddCount > 1) {
                     return false;
                 }
             }

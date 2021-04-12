@@ -11,7 +11,7 @@ public class IntegerBreak {
         if (n == 3) return 2;
         if (n == 4) return 4;
         int result = 1;
-        while (n > 4){
+        while (n > 4) {
             result *= 3;
             n -= 3;
         }

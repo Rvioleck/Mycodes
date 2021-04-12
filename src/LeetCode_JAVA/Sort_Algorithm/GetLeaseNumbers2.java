@@ -10,10 +10,10 @@ public class GetLeaseNumbers2 {
         }
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((x, y) -> y - x);
         for (int i = 0; i < arr.length; i++) {
-            if (i < k){
+            if (i < k) {
                 maxHeap.add(arr[i]);
             } else {
-                if (maxHeap.element() > arr[i]){
+                if (maxHeap.element() > arr[i]) {
                     maxHeap.poll();
                     maxHeap.add(arr[i]);
                 }
@@ -21,8 +21,8 @@ public class GetLeaseNumbers2 {
         }
         int[] res = new int[k];
         int index = 0;
-        for (int num:
-             maxHeap) {
+        for (int num :
+                maxHeap) {
             res[index++] = num;
         }
         return res;

@@ -14,7 +14,7 @@ public class GetLeastNumbers {
 
     private int[] quickSearch(int[] arr, int left, int right, int k) {
         int pivotIndex = partition(arr, left, right);
-        if (pivotIndex == k){
+        if (pivotIndex == k) {
             return Arrays.copyOf(arr, k + 1);
         }
         return pivotIndex > k ?
@@ -24,12 +24,12 @@ public class GetLeastNumbers {
 
     private int partition(int[] arr, int left, int right) {
         int pivot = arr[left];
-        while (left < right){
-            while (left < right && arr[right] >= pivot){
+        while (left < right) {
+            while (left < right && arr[right] >= pivot) {
                 right--;
             }
             arr[left] = arr[right];
-            while (left < right && arr[left] <= pivot){
+            while (left < right && arr[left] <= pivot) {
                 left++;
             }
             arr[right] = arr[left];

@@ -14,16 +14,16 @@ public class FrequencySort {
         }
         PriorityQueue<Character> minHeap = new PriorityQueue<>((x, y) -> (
                 frequency.get(y) - frequency.get(x)
-                ));
-        for (char ch:
-             frequency.keySet()) {
+        ));
+        for (char ch :
+                frequency.keySet()) {
             minHeap.offer(ch);
         }
         StringBuilder res = new StringBuilder();
-        while (!minHeap.isEmpty()){
+        while (!minHeap.isEmpty()) {
             char ch = minHeap.poll();
             int count = frequency.get(ch);
-            while (count-- != 0){
+            while (count-- != 0) {
                 res.append(ch);
             }
         }

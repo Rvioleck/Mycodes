@@ -4,9 +4,9 @@ import LeetCode_JAVA.LinkList.ListNode;
 
 public class SortedListToBST {
 
-    private ListNode getMid(ListNode head, ListNode tail){
+    private ListNode getMid(ListNode head, ListNode tail) {
         ListNode slow = head, fast = head;
-        while (fast != tail){
+        while (fast != tail) {
             fast = fast.next;
             if (fast == tail) break;
             fast = fast.next;
@@ -20,7 +20,7 @@ public class SortedListToBST {
     }
 
     private TreeNode build(ListNode head, ListNode tail) {
-        if (head == tail){
+        if (head == tail) {
             return null;
         }
         ListNode mid = getMid(head, tail);

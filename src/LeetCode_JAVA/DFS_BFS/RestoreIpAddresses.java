@@ -22,7 +22,7 @@ public class RestoreIpAddresses {
         List<String> res = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         this.n = s.length();
-        if (n > 16){
+        if (n > 16) {
             return res;
         }
         dfs(res, sb, s, 0, 0);
@@ -30,7 +30,7 @@ public class RestoreIpAddresses {
     }
 
     private void dfs(List<String> res, StringBuilder sb, String s, int index, int count) {
-        if (count == 4 && index == n){
+        if (count == 4 && index == n) {
             res.add(sb.toString());
             return;
         }
@@ -40,7 +40,7 @@ public class RestoreIpAddresses {
             String sub = s.substring(index, index + i);
             if (!isIP(sub)) continue;
             int len = sub.length();
-            if (index == 0){
+            if (index == 0) {
                 sb.append(sub);
             } else {
                 sb.append(".").append(sub);
@@ -52,17 +52,17 @@ public class RestoreIpAddresses {
 
     }
 
-    private boolean isIP(String ip){
-        if (ip.equals("0")){
+    private boolean isIP(String ip) {
+        if (ip.equals("0")) {
             return true;
         }
-        if (ip.charAt(0) == '0'){
+        if (ip.charAt(0) == '0') {
             return false;
         }
         int ipNum;
         try {
             ipNum = Integer.parseInt(ip);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
         return ipNum <= 255 && ipNum >= 0;

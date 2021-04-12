@@ -10,9 +10,9 @@ public class maxProfit2 {
 
     public int maxProfit(int[] prices) {
         int profit = 0;
-        for (int i = 1; i < prices.length; ++i){
+        for (int i = 1; i < prices.length; ++i) {
             int deltaPrice = prices[i] - prices[i - 1];
-            if (deltaPrice > 0){
+            if (deltaPrice > 0) {
                 profit += deltaPrice;
             }
         }
@@ -20,7 +20,7 @@ public class maxProfit2 {
     }
 
     public static void main(String[] args) {
-        int[] prices = new int[]{7,1,5,3,6,4};
+        int[] prices = new int[]{7, 1, 5, 3, 6, 4};
         System.out.println(new maxProfit2().maxProfit(prices));
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class Partition {
 
     int n;
-    
+
     public static void main(String[] args) {
         String s = "aab";
         System.out.println(new Partition().partition(s));
@@ -26,7 +26,7 @@ public class Partition {
     }
 
     private void dfs(List<List<String>> res, List<String> one, String s, int index) {
-        if (index == n){
+        if (index == n) {
             res.add(new ArrayList<>(one));
             return;
         }
@@ -39,11 +39,11 @@ public class Partition {
             one.remove(one.size() - 1);
         }
     }
-    
-    private boolean isPalindrome(String s){
+
+    private boolean isPalindrome(String s) {
         int len = s.length();
         for (int i = 0; i < len / 2; i++) {
-            if (s.charAt(i) != s.charAt(len - i - 1)){
+            if (s.charAt(i) != s.charAt(len - i - 1)) {
                 return false;
             }
         }

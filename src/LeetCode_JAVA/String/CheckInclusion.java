@@ -6,8 +6,8 @@ import java.util.Map;
 public class CheckInclusion {
 
     public boolean checkInclusion(String s1, String s2) {
-        int len1 = s1.length(), len2 =s2.length();
-        if (len1 > len2){
+        int len1 = s1.length(), len2 = s2.length();
+        if (len1 > len2) {
             return false;
         }
         Map<Character, Integer> map1 = new HashMap<>();
@@ -19,14 +19,14 @@ public class CheckInclusion {
             map2.put(ch2, map2.getOrDefault(ch2, 0) + 1);
         }
         int index = len1;
-        while (index < len2){
-            if (map1.equals(map2)){
+        while (index < len2) {
+            if (map1.equals(map2)) {
                 return true;
             }
             char before = s2.charAt(index - len1);
             char after = s2.charAt(index);
             map2.put(before, map2.get(before) - 1);
-            if (map2.get(before) == 0){
+            if (map2.get(before) == 0) {
                 map2.remove(before);
             }
             map2.put(after, map2.getOrDefault(after, 0) + 1);

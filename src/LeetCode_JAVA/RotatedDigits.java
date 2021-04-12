@@ -20,13 +20,10 @@ public class RotatedDigits {
                 || str.indexOf("7") >= 0) {
             return false;
         }
-        if (str.indexOf("2") >= 0
+        return str.indexOf("2") >= 0
                 || str.indexOf("5") >= 0
                 || str.indexOf("6") >= 0
-                || str.indexOf("9") >= 0) {
-            return true;
-        }
-        return false;
+                || str.indexOf("9") >= 0;
     }
 
     @Test

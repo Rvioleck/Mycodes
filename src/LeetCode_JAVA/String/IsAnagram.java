@@ -6,7 +6,7 @@ public class IsAnagram {
 
     public boolean isAnagram(String s, String t) {
         int lenS = s.length(), lenT = t.length();
-        if (lenS != lenT){
+        if (lenS != lenT) {
             return false;
         }
         HashMap<Character, Integer> mapS = new HashMap<>();
@@ -22,9 +22,9 @@ public class IsAnagram {
         return mapS.equals(mapT);
     }
 
-    public boolean isAnagram2(String s, String t){
+    public boolean isAnagram2(String s, String t) {
         int lenS = s.length(), lenT = t.length();
-        if (lenS != lenT){
+        if (lenS != lenT) {
             return false;
         }
         int res = 0, sum1 = 0, sum2 = 0;

@@ -6,8 +6,8 @@ public class Flatten {
         build(root);
     }
 
-    private TreeNode build(TreeNode root){
-        if (root == null){
+    private TreeNode build(TreeNode root) {
+        if (root == null) {
             return null;
         }
         root.left = build(root.left);

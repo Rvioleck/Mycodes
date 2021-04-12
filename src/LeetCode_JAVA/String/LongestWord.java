@@ -9,7 +9,7 @@ public class LongestWord {
         String[] words = new String[]{
 //                "a", "banana", "app", "appl", "ap", "apply", "apple",
 //                "yo", "ew", "fc", "zrc", "yodn", "fcm", "qm", "qmo", "fcmz", "z", "ewq", "yod", "ewqz", "y"
-                "rac","rs","ra","on","r","otif","o","onpdu","rsf","rs","ot","oti","racy","onpd"
+                "rac", "rs", "ra", "on", "r", "otif", "o", "onpdu", "rsf", "rs", "ot", "oti", "racy", "onpd"
 //                "vsw","vs","zwu","vsx","nc","o","vswus","orv","imf","i","v","zw","vs"
 
         };
@@ -21,7 +21,7 @@ public class LongestWord {
         HashSet<String> wordset = new HashSet<>(Arrays.asList(words));
         Arrays.sort(words, (a, b) -> a.length() == b.length()
                 ? a.compareTo(b) : b.length() - a.length());
-        for (String word: words) {
+        for (String word : words) {
             boolean good = true;
             for (int k = 1; k < word.length(); ++k) {
                 if (!wordset.contains(word.substring(0, k))) {

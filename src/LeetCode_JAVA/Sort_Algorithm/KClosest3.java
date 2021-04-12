@@ -11,7 +11,7 @@ public class KClosest3 {
 
     private int[][] quickSort(int[][] points, int left, int right, int k) {
         int pivotIdx = partition(points, left, right);
-        if (pivotIdx == k - 1){
+        if (pivotIdx == k - 1) {
             return Arrays.copyOf(points, k);
         }
         return pivotIdx > k - 1 ?
@@ -27,12 +27,12 @@ public class KClosest3 {
         points[left] = temp;
         int[] pivotPoint = points[left];
         int pivot = getDistance(points[left]);
-        while (left < right){
-            while (left < right && getDistance(points[right]) >= pivot){
+        while (left < right) {
+            while (left < right && getDistance(points[right]) >= pivot) {
                 right--;
             }
             points[left] = points[right];
-            while (left < right && getDistance(points[left]) <= pivot){
+            while (left < right && getDistance(points[left]) <= pivot) {
                 left++;
             }
             points[right] = points[left];
@@ -42,7 +42,7 @@ public class KClosest3 {
     }
 
     private int getDistance(int[] point) {
-        return (int)(Math.pow(point[0], 2) + Math.pow(point[1], 2));
+        return (int) (Math.pow(point[0], 2) + Math.pow(point[1], 2));
     }
 
     public static void main(String[] args) {
@@ -54,7 +54,7 @@ public class KClosest3 {
                 {4, 0},
                 {1, -1}
         }, 3);
-        for (int[] one:
+        for (int[] one :
                 res) {
             System.out.println(Arrays.toString(one));
         }

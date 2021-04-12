@@ -12,11 +12,11 @@ public class TopKFrequent {
         }
         // 小根堆中数据元素int[]存储的第一个元素为数组元素值，第二个元素为该数组元素的频度
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(x -> x[1]));
-        for (Map.Entry<Integer, Integer> elem:
-             map.entrySet()) {
+        for (Map.Entry<Integer, Integer> elem :
+                map.entrySet()) {
             int num = elem.getKey(), frequency = elem.getValue();
-            if (minHeap.size() == k){
-                if (minHeap.element()[1] < frequency){
+            if (minHeap.size() == k) {
+                if (minHeap.element()[1] < frequency) {
                     minHeap.poll();
                     minHeap.offer(new int[]{num, frequency});
                 }
@@ -26,8 +26,8 @@ public class TopKFrequent {
         }
         int[] res = new int[k];
         int i = 0;
-        for (int[] elem:
-             minHeap) {
+        for (int[] elem :
+                minHeap) {
             res[i++] = elem[0];
         }
         return res;

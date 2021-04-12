@@ -4,13 +4,13 @@ public class HasPathSum {
     private boolean result = false;
     private int sum;
 
-    private void dfs(TreeNode root, int curSum){
-        if (root == null || result){
+    private void dfs(TreeNode root, int curSum) {
+        if (root == null || result) {
             return;
         }
         curSum += root.val;
-        if (root.left == null && root.right == null){
-            if (curSum == sum){
+        if (root.left == null && root.right == null) {
+            if (curSum == sum) {
                 result = true;
             }
             return;
@@ -20,7 +20,7 @@ public class HasPathSum {
     }
 
     public boolean hasPathSum(TreeNode root, int sum) {
-        if (root == null){
+        if (root == null) {
             return false;
         }
         this.sum = sum;

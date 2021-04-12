@@ -6,12 +6,12 @@ public class ReverseWords2 {
         char[] chars = s.toCharArray();
         int len = chars.length;
         int i = 0, j = 0;
-        while (i < len){
-            while (j <= len - 1 && chars[j] != ' '){
+        while (i < len) {
+            while (j <= len - 1 && chars[j] != ' ') {
                 j++;
             }
             int left = i, right = j - 1;
-            while (left < right){
+            while (left < right) {
                 char temp = chars[left];
                 chars[left] = chars[right];
                 chars[right] = temp;

@@ -12,7 +12,7 @@ public class GenerateMatrix2 {
         int rowNum = n - 1;
         int loop = n / 2;
         int i, j, startX = 0, startY = 0;
-        while (loop-- != 0){
+        while (loop-- != 0) {
             for (j = startY; j < startY + rowNum; j++) {
                 matrix[startX][j] = ++digit;
             }
@@ -22,15 +22,15 @@ public class GenerateMatrix2 {
             for (j = startY + rowNum; j > startY; j--) {
                 matrix[startX + rowNum][j] = ++digit;
             }
-            for (i = startX + rowNum; i > startX ; i--) {
+            for (i = startX + rowNum; i > startX; i--) {
                 matrix[i][startY] = ++digit;
             }
             rowNum -= 2;
             startX++;
             startY++;
         }
-        if (n % 2 == 1){
-            matrix[n/2][n/2] = n*n;
+        if (n % 2 == 1) {
+            matrix[n / 2][n / 2] = n * n;
         }
         return matrix;
     }

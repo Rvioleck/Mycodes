@@ -3,7 +3,7 @@ package LeetCode_JAVA.BinaryTree;
 public class MirrorTree {
 
     public TreeNode mirrorTree(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return null;
         }
         TreeNode left = mirrorTree(root.right);

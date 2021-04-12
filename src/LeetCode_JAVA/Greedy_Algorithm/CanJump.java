@@ -15,13 +15,13 @@ public class CanJump {
 
     public boolean canJump(int[] nums) {
         int n = nums.length;
-        if (n == 1){
+        if (n == 1) {
             return true;
         }
         int leftJump = 0;
-        for (int i = 0; i < n; ++i){
+        for (int i = 0; i < n; ++i) {
             leftJump = Math.max(leftJump, nums[i]);
-            if (leftJump <= 0 && i != n - 1){
+            if (leftJump <= 0 && i != n - 1) {
                 return false;
             }
             leftJump--;

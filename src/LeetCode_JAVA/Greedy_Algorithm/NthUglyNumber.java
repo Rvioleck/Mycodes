@@ -13,13 +13,13 @@ public class NthUglyNumber {
         int m2 = 1, m3 = 1, m5 = 1;
         for (int i = 2; i <= n; i++) {
             int ugly = Math.min(dp[m2] * 2, Math.min(dp[m3] * 3, dp[m5] * 5));
-            if (ugly == dp[m2] * 2){
+            if (ugly == dp[m2] * 2) {
                 m2++;
             }
-            if (ugly == dp[m3] * 3){
+            if (ugly == dp[m3] * 3) {
                 m3++;
             }
-            if (ugly == dp[m5] * 5){
+            if (ugly == dp[m5] * 5) {
                 m5++;
             }
             dp[i] = ugly;

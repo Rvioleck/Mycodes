@@ -3,17 +3,17 @@ package LeetCode_JAVA.BinaryTree;
 public class IsSubStructure {
 
     private boolean hasSub(TreeNode A, TreeNode B) {
-        if (B == null){
+        if (B == null) {
             return true;
         }
-        if (A == null){
+        if (A == null) {
             return false;
         }
         return A.val == B.val && hasSub(A.left, B.left) && hasSub(A.right, B.right);
     }
 
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        if (A == null || B == null){
+        if (A == null || B == null) {
             return false;
         }
         return hasSub(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);

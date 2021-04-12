@@ -9,25 +9,25 @@ public class LongestSubstring {
         }
         char split = 0;
         for (int i = 0; i < 26; i++) {
-            if (cnt[i] > 0 && cnt[i] < k){
-                split = (char)(i + 'a');
+            if (cnt[i] > 0 && cnt[i] < k) {
+                split = (char) (i + 'a');
                 break;
             }
         }
-        if (split == 0){
+        if (split == 0) {
             return right - left + 1;
         }
         int i = left;
         int ret = 0;
-        while (i <= right){
-            while (i <= right && s.charAt(i) == split){
+        while (i <= right) {
+            while (i <= right && s.charAt(i) == split) {
                 i++;
             }
-            if (i > right){
+            if (i > right) {
                 break;
             }
             int start = i;
-            while (i <= right && s.charAt(i) != split){
+            while (i <= right && s.charAt(i) != split) {
                 i++;
             }
             int length = dfs(s, start, i - 1, k);
@@ -39,7 +39,6 @@ public class LongestSubstring {
     public int longestSubstring(String s, int k) {
         return dfs(s, 0, s.length() - 1, k);
     }
-
 
 
     public static void main(String[] args) {

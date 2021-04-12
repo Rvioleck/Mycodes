@@ -1,8 +1,5 @@
 package LeetCode_JAVA.BinaryTree;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class DiameterOfBinaryTree {
 
     int max = 0;
@@ -12,8 +9,8 @@ public class DiameterOfBinaryTree {
         return max;
     }
 
-    private int getMaxDepth(TreeNode root){
-        if (root == null){
+    private int getMaxDepth(TreeNode root) {
+        if (root == null) {
             return 0;
         }
         int leftDepth = getMaxDepth(root.left);

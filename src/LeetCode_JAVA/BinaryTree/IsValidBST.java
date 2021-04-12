@@ -1,9 +1,8 @@
 package LeetCode_JAVA.BinaryTree;
 
-import java.util.Stack;
-
 public class IsValidBST {
     long pre = Long.MIN_VALUE;
+
     public boolean isValidBST(TreeNode root) {
         if (root == null) {
             return true;

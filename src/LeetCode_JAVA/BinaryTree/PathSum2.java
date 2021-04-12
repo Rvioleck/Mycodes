@@ -7,12 +7,12 @@ public class PathSum2 {
 
     private int count = 0;
 
-    private void dfs(TreeNode root, int sum){
-        if (root == null){
+    private void dfs(TreeNode root, int sum) {
+        if (root == null) {
             return;
         }
         sum -= root.val;
-        if (sum == 0){
+        if (sum == 0) {
             count++;
         }
         dfs(root.left, sum);
@@ -25,13 +25,13 @@ public class PathSum2 {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         TreeNode node;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             node = queue.remove();
             dfs(node, sum);
-            if (node.left != null){
+            if (node.left != null) {
                 queue.offer(node.left);
             }
-            if (node.right != null){
+            if (node.right != null) {
                 queue.offer(node.right);
             }
         }

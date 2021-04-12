@@ -22,12 +22,12 @@ public class SolveNQueens {
         return res;
     }
 
-    private void putQueen(int x, int y, int n, boolean[][] attack){
+    private void putQueen(int x, int y, int n, boolean[][] attack) {
         for (int i = 0; i < 8; i++) {
             int dx = x;
             int dy = y;
             for (int j = 0; j < n; j++) {
-                if (dx < n && dx >= 0 && dy < n && dy >= 0){
+                if (dx < n && dx >= 0 && dy < n && dy >= 0) {
                     attack[dx][dy] = true;
                 }
                 dx += dxdy[i][0];
@@ -37,7 +37,7 @@ public class SolveNQueens {
     }
 
     private void backtrace(int k, int n, boolean[][] attack, List<List<String>> res, char[][] chess) {
-        if (k == n){
+        if (k == n) {
             List<String> oneSolve = generateBoard(chess, n);
             res.add(new ArrayList<>(oneSolve));
             return;

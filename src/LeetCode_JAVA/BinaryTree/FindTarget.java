@@ -8,16 +8,16 @@ public class FindTarget {
     List<Integer> nums = new ArrayList<>();
 
     public boolean findTarget(TreeNode root, int k) {
-        if (root == null){
+        if (root == null) {
             return false;
         }
         inorder(root);
         int i = 0, j = nums.size() - 1;
-        while (i < j){
+        while (i < j) {
             int left = nums.get(i), right = nums.get(j);
-            if (left + right < k){
+            if (left + right < k) {
                 i++;
-            } else if (left + right > k){
+            } else if (left + right > k) {
                 j--;
             } else {
                 return true;
@@ -27,7 +27,7 @@ public class FindTarget {
     }
 
     private void inorder(TreeNode root) {
-        if (root != null){
+        if (root != null) {
             inorder(root.left);
             nums.add(root.val);
             inorder(root.right);

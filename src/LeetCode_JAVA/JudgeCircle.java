@@ -20,9 +20,7 @@ public class JudgeCircle {
                     break;
             }
         }
-        if (x == 0 && y == 0)
-            return true;
-        return false;
+        return x == 0 && y == 0;
     }
 //    public boolean judgeCirle(String moves){
 //        int Unum = 0, Dnum = 0, Lnum = 0, Rnum = 0;

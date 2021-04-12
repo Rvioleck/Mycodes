@@ -6,10 +6,10 @@ public class KClosest {
 
     public int[][] kClosest(int[][] points, int K) {
         // 自定义排序法
-        Arrays.sort(points, (x, y) -> (int)(
+        Arrays.sort(points, (x, y) -> (int) (
                 Math.pow(x[0], 2) + Math.pow(x[1], 2) -
                         (Math.pow(y[0], 2) + Math.pow(y[1], 2))
-                ));
+        ));
         return Arrays.copyOf(points, K);
     }
 
@@ -22,8 +22,8 @@ public class KClosest {
                 {4, 0},
                 {1, -1}
         }, 3);
-        for (int[] one:
-             res) {
+        for (int[] one :
+                res) {
             System.out.println(Arrays.toString(one));
         }
     }

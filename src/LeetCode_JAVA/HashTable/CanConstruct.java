@@ -20,9 +20,9 @@ public class CanConstruct {
         }
         for (int i = 0; i < noteLen; i++) {
             char ch = ransomNote.charAt(i);
-            if (magMap.containsKey(ch)){
+            if (magMap.containsKey(ch)) {
                 magMap.put(ch, magMap.get(ch) - 1);
-                if (magMap.get(ch) == 0){
+                if (magMap.get(ch) == 0) {
                     magMap.remove(ch);
                 }
             } else {

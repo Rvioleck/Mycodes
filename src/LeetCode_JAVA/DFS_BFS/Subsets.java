@@ -17,9 +17,9 @@ public class Subsets {
         return res;
     }
 
-    public void dfs(List<List<Integer>> res, List<Integer> one, int[] nums, int index){
+    public void dfs(List<List<Integer>> res, List<Integer> one, int[] nums, int index) {
         res.add(new ArrayList<>(one));
-        for (int i = index; i < nums.length; i++){
+        for (int i = index; i < nums.length; i++) {
             one.add(nums[i]);
             dfs(res, one, nums, i + 1);
             one.remove(one.size() - 1);

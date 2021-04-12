@@ -3,18 +3,18 @@ package LeetCode_JAVA.DynamicProgram.SubSequence;
 /**
  * https://leetcode-cn.com/problems/delete-operation-for-two-strings/
  * 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。
- *
+ * <p>
  * dp[i][j]: 只考虑s的前i+1个元素(0~i)(包含i)和t的前j+1个元素(0~j)(包含j)的情况下，s和t的最小步数
- *
+ * <p>
  * word1[i] == word2[j]: dp[i][j] = dp[i - 1][j - 1];
  * word2[i] != word2[j]: dp[i][j] = min(min(dp[i - 1][j], dp[i][j - 1]) + 1, dp[i - 1][j - 1] + 2)
- *
+ * <p>
  * dp[i][0] = 1 (0 <= i <= m) dp[0][j] = 1 (0 <= j <= n)
  */
 public class MinDistance {
 
     public static void main(String[] args) {
-        String word1 =  "leetcode", word2 = "etco";
+        String word1 = "leetcode", word2 = "etco";
         System.out.println(new MinDistance().minDistance(word1, word2));
     }
 
@@ -31,7 +31,7 @@ public class MinDistance {
             int a = word1.charAt(i - 1);
             for (int j = 1; j <= n; j++) {
                 int b = word2.charAt(j - 1);
-                if (a == b){
+                if (a == b) {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
                     dp[i][j] = Math.min(Math.min(dp[i][j - 1], dp[i - 1][j]) + 1, dp[i - 1][j - 1] + 2);

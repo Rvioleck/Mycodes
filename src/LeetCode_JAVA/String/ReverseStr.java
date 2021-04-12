@@ -1,19 +1,17 @@
 package LeetCode_JAVA.String;
 
-import java.util.Arrays;
-
 public class ReverseStr {
 
     public String reverseStr(String s, int k) {
         char[] chars = s.toCharArray();
         int lens = chars.length;
         int i = 0, j = k - 1;
-        while (i < lens || j < lens){
-            if (j >= lens){
+        while (i < lens || j < lens) {
+            if (j >= lens) {
                 j = lens - 1;
             }
             int left = i, right = j;
-            while (left < right){
+            while (left < right) {
                 char temp = chars[left];
                 chars[left] = chars[right];
                 chars[right] = temp;

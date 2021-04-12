@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class SubsetsWithDup {
 
-    private void dfs(List<List<Integer>> res, List<Integer> one, int[] nums, int index){
+    private void dfs(List<List<Integer>> res, List<Integer> one, int[] nums, int index) {
         res.add(new ArrayList<>(one));
-        for (int i = index; i < nums.length; i++){
+        for (int i = index; i < nums.length; i++) {
             if (i > index && nums[i] == nums[i - 1]) continue;  // 剪去同层的相同元素的枝
             one.add(nums[i]);
             dfs(res, one, nums, i + 1);

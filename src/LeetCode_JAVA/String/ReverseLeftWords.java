@@ -8,7 +8,7 @@ public class ReverseLeftWords {
         return (String) doubleS.subSequence(n, n + len);
     }
 
-    public String reverseLeftWords2(String s, int n){
+    public String reverseLeftWords2(String s, int n) {
         char[] chars = s.toCharArray();
         int len = chars.length;
         for (int i = 0; i < n / 2; i++) {

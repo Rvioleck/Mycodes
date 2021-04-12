@@ -2,18 +2,18 @@ package LeetCode_JAVA.BinaryTree;
 
 public class IsSubtree {
 
-    private boolean isEquals(TreeNode root1, TreeNode root2){
-        if (root1 == null && root2 == null){
+    private boolean isEquals(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
             return true;
         }
-        if (root1 == null || root2 == null){
+        if (root1 == null || root2 == null) {
             return false;
         }
         return root1.val == root2.val && isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right);
     }
 
     public boolean isSubtree(TreeNode root1, TreeNode root2) {
-        if (root1 == null){
+        if (root1 == null) {
             return false;
         }
         return isEquals(root1, root2) || isSubtree(root1.left, root2) || isSubtree(root1.right, root2);

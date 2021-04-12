@@ -1,6 +1,8 @@
 package LeetCode_JAVA.String;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class GroupAnagrams2 {
 
@@ -24,7 +26,7 @@ public class GroupAnagrams2 {
             group.add(strs[i]);
             for (int j = i + 1; j < len; j++) {
                 if (tag[j]) continue;
-                if (map.get(strs[i]).equals(map.get(strs[j]))){
+                if (map.get(strs[i]).equals(map.get(strs[j]))) {
                     group.add(strs[j]);
                     tag[j] = true;
                 }

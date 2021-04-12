@@ -1,6 +1,9 @@
 package LeetCode_JAVA.String;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CustomSortString {
 
@@ -18,9 +21,9 @@ public class CustomSortString {
             boolean xInS = map.containsKey(x), yInS = map.containsKey(y);
             if (!xInS && !yInS) {
                 return 0;
-            } else if (!xInS){
+            } else if (!xInS) {
                 return 1;
-            } else if (!yInS){
+            } else if (!yInS) {
                 return -1;
             } else {
                 int priorX = map.get(x), priorY = map.get(y);
@@ -28,8 +31,8 @@ public class CustomSortString {
             }
         });
         StringBuilder res = new StringBuilder();
-        for (Character ch:
-             list1) {
+        for (Character ch :
+                list1) {
             res.append(ch);
         }
         return res.toString();

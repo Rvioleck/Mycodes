@@ -15,9 +15,9 @@ public class FirstBadVersion {
 
     public int firstBadVersion(int n) {
         int l = 0, r = n;
-        while (l <= r){
+        while (l <= r) {
             int mid = l + (r - l) / 2;
-            if (isBadVersion(mid)){
+            if (isBadVersion(mid)) {
                 l = mid + 1;
             } else {
                 r = mid - 1;

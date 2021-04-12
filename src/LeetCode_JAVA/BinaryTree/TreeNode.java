@@ -1,23 +1,25 @@
 package LeetCode_JAVA.BinaryTree;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode(){}
+    TreeNode() {
+    }
+
     TreeNode(int x) {
         val = x;
     }
+
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
+
     //    int []arr = {3, 9, 20, Integer.MAX_VALUE, Integer.MAX_VALUE, 15, 7};
     private static int[] StrToIntArray(String str) {
         str = str.substring(1, str.length() - 1);
@@ -60,14 +62,15 @@ public class TreeNode {
     public String toString() {
         int height = getHeight(this);
         String[][] res = new String[height][(1 << height) - 1];
-        for(String[] arr:res)
-            Arrays.fill(arr,"");
+        for (String[] arr : res)
+            Arrays.fill(arr, "");
         fill(res, this, 0, 0, res[0].length);
         StringBuffer output = new StringBuffer();
-        for(String[] arr:res)
+        for (String[] arr : res)
             output.append(Arrays.deepToString(arr)).append("\n");
         return new String(output);
     }
+
     public void fill(String[][] res, TreeNode root, int i, int l, int r) {
         if (root == null)
             return;
@@ -75,6 +78,7 @@ public class TreeNode {
         fill(res, root.left, i + 1, l, (l + r) / 2);
         fill(res, root.right, i + 1, (l + r + 1) / 2, r);
     }
+
     public int getHeight(TreeNode root) {
         if (root == null)
             return 0;

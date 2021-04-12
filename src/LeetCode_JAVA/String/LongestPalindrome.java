@@ -13,14 +13,14 @@ public class LongestPalindrome {
         int sum = 0;
         boolean tag = false;
         for (int count : map.values()) {
-            if (count % 2 == 0){
+            if (count % 2 == 0) {
                 sum += count;
             } else {
                 sum += count - 1;
                 tag = true;
             }
         }
-        if (tag){
+        if (tag) {
             sum += 1;
         }
         return sum;

@@ -4,16 +4,16 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    public void mergeSort(int[] nums){
+    public void mergeSort(int[] nums) {
         int len = nums.length;
-        if (len < 2){
+        if (len < 2) {
             return;
         }
         int[] temp = new int[len];
         divide(nums, 0, len - 1, temp);
     }
 
-    public void divide(int[] nums, int left, int right, int[] temp){
+    public void divide(int[] nums, int left, int right, int[] temp) {
         if (left >= right) return;
         int mid = left - (left - right) / 2;
         divide(nums, left, mid, temp);
@@ -27,11 +27,11 @@ public class MergeSort {
         }
         int i = left, j = mid + 1;
         for (int k = left; k <= right; k++) {
-            if (i > mid){
+            if (i > mid) {
                 nums[k] = temp[j++];
-            } else if (j > right){
+            } else if (j > right) {
                 nums[k] = temp[i++];
-            } else if (temp[i] <= temp[j]){
+            } else if (temp[i] <= temp[j]) {
                 nums[k] = temp[i++];
             } else {
                 nums[k] = temp[j++];
