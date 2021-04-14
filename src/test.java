@@ -1,35 +1,46 @@
+
 import java.util.*;
 
-public class test{
-    private int m, n;
+public class test {
 
-    private void dfs(int[][] maze, int x, int y, List<List<Integer>> path, int len){
-        if (x < 0 || y < 0 || x >= m || y >= n || maze[x][y] == 1){
-            return;
+    int[][] nums;
+    HashSet<Integer> set = new HashSet<>();
+    HashSet<HashSet<Integer>> res = new HashSet<>();
+
+    public void dfs(int i){
+        res.add(new HashSet<>(set));
+        for (int j = 0; j < 7; j++){
+            if (nums[i][j] == 0) continue;
+            if (set.contains(j)) continue;
+            set.add(j);
+            dfs(j);
+            set.remove((Object)j);
         }
-        path.add(new ArrayList<Integer>(){
-            {
-                add(x);
-                add(y);
-            }
-        });
-        maze[x][y] = 1;
-        if (x == m - 1 && y == n - 1){
-//            maze[x][y] = 1;
-            for (List<Integer> point : path) {
-                System.out.println(point);
-            }
-            System.out.println(len);
-            return;
-        }
-        dfs(maze, x, y + 1, path, len + 1);
-        dfs(maze, x, y - 1, path, len + 1);
-        dfs(maze, x + 1, y, path, len + 1);
-        dfs(maze, x - 1, y, path, len + 1);
-        maze[x][y] = 0;
-        path.remove(path.size() - 1);
     }
 
-    public static void main(String[] args){
+    public int f(int[][] nums){
+        this.nums = nums;
+        for (int i = 0; i < 7; i++){
+            set.add(i);
+            res.add(set);
+            dfs(i);
+            set.remove((Object)i);
+        }
+        return res.size();
     }
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        int[][] nums = new int[][]{
+                {0,1,0,0,0,1,0},
+                {1,0,1,0,0,0,1},
+                {0,1,0,1,0,0,1},
+                {0,0,1,0,1,0,0},
+                {0,0,0,1,0,1,1},
+                {1,0,0,0,1,0,1},
+                {0,1,1,0,1,1,0}
+        };
+        System.out.println(new test().f(nums));
+    }
+
 }

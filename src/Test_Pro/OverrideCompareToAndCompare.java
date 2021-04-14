@@ -27,17 +27,12 @@ public class OverrideCompareToAndCompare {
     @Test
     public void comparatorTest() {
         String[] arr = {"AA", "CC", "KK", "MM", "GG", "JJ", "DD"};
-        Arrays.sort(arr, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (o1 instanceof String && o2 instanceof String) {
-                    String s1 = (String) o1;
-                    String s2 = (String) o2;
-                    return -s1.compareTo(s2);
-                }
-//                return 0;
-                throw new RuntimeException("输入类型不一致");
+        Arrays.sort(arr, (o1, o2) -> {
+            if (o1 != null && o2 != null) {
+                return -o1.compareTo(o2);
             }
+//                return 0;
+            throw new RuntimeException("输入类型不一致");
         });
         System.out.println(Arrays.toString(arr));
     }
@@ -50,15 +45,12 @@ public class OverrideCompareToAndCompare {
         arr[2] = new Goods("miMouse", 16);
         arr[3] = new Goods("huaweiMouse", 65);
         arr[4] = new Goods("eellMouse", 43);
-        Arrays.sort(arr, new Comparator<Goods>() {
-            // 指明商品比较大小的方式：按照产品名称从低到高，再按照价格从高到低排序。
-            @Override
-            public int compare(Goods o1, Goods o2) {
-                if (o1.getName().equals(o2.getName())) {
-                    return Double.compare(o2.getPrice(), o1.getPrice());
-                } else {
-                    return o1.getName().compareTo(o2.getName());
-                }
+        // 指明商品比较大小的方式：按照产品名称从低到高，再按照价格从高到低排序。
+        Arrays.sort(arr, (o1, o2) -> {
+            if (o1.getName().equals(o2.getName())) {
+                return Double.compare(o2.getPrice(), o1.getPrice());
+            } else {
+                return o1.getName().compareTo(o2.getName());
             }
         });
 
