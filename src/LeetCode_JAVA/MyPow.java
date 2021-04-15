@@ -5,20 +5,18 @@ import org.junit.Test;
 public class MyPow {
     public double quickMultiply(double x, long n) {
         double result = 1;
-        int tag;
         if (n == 0 || x == 1) {
             return 1;
         }
-        double temp = x;
-        if (n < 0) {
+        if (n < 0) { // 负指数幂
             n = -n;
-            temp = 1 / x;
+            x = 1 / x;
         }
         while (n != 0) {
-            if (n % 2 == 1) {
-                result *= temp;
+            if ((n & 1) == 1) {
+                result *= x;
             }
-            temp *= temp;
+            x *= x;
             n >>= 1;
         }
         return result;
@@ -32,8 +30,11 @@ public class MyPow {
 
     @Test
     public void test() {
-        double x = 2;
-        int n = 0;
-        System.out.println(myPow(x, n));
+        System.out.println(myPow(1, 0));
+        System.out.println(myPow(0, 0));
+        System.out.println(myPow(0, 10));
+        System.out.println(myPow(-3, 5));
+        System.out.println(myPow(-0.5, 3));
+        System.out.println(myPow(3, -3));
     }
 }
