@@ -29,11 +29,12 @@ public class _07_出现k次 {
                 } else {
                     resArr[j] += (kRadix[i][j] - '0');
                 }
+                resArr[j] %= k;
             }
         }
         int res = 0; // k进制结果转为十进制
         for (int i = 0; i < maxLen; i++) {
-            res += (resArr[i] % k) * (int)Math.pow(k, i);
+            res += resArr[i] * (int)Math.pow(k, i);
         }
         System.out.println(res);
     }
