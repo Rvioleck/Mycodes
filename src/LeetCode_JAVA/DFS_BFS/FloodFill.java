@@ -39,9 +39,9 @@ public class FloodFill {
                 {0, 1, 1},
         };
         image = new FloodFill().floodFill(image, 1, 1, 1);
-        for (int i = 0; i < image.length; i++) {
-            for (int j = 0; j < image[i].length; j++) {
-                System.out.print(image[i][j] + " ");
+        for (int[] ints : image) {
+            for (int j = 0; j < ints.length; j++) {
+                System.out.print(ints[j] + " ");
             }
             System.out.println();
         }
