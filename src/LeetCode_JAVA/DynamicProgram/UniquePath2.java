@@ -12,7 +12,7 @@ public class UniquePath2 {
         dp[1][1] = (obstacleGrid[0][0] == 0) ? 1 : 0;
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
-//                if (i == 1 && j == 1 || obstacleGrid[i - 1][j - 1] == 1) continue;
+                //if (i == 1 && j == 1 || obstacleGrid[i - 1][j - 1] == 1) continue;
                 // 化成上述if简化了逻辑，则在等价压缩的时候会出问题
                 // 所以若要进行等价压缩，需要使用下述的if-else
                 if (i == 1 && j == 1) continue; // 初始结点已经被初始化，跳过

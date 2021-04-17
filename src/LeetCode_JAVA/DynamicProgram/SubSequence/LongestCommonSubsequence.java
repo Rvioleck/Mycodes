@@ -53,7 +53,6 @@ public class LongestCommonSubsequence {
                 }
             }
             dp[0] = Arrays.copyOf(dp[1], n + 1);
-            Arrays.fill(dp[1], 0);
         }
         return dp[0][n];
     }

@@ -9,7 +9,7 @@ package LeetCode_JAVA.DynamicProgram.SubSequence;
  * word1[i] == word2[j]: dp[i][j] = dp[i - 1][j - 1];
  * word2[i] != word2[j]: dp[i][j] = min(min(dp[i - 1][j], dp[i][j - 1]) + 1, dp[i - 1][j - 1] + 2)
  * <p>
- * dp[i][0] = 1 (0 <= i <= m) dp[0][j] = 1 (0 <= j <= n)
+ * dp[i][0] = i (0 <= i <= m) dp[0][j] = j (0 <= j <= n)
  */
 public class MinDistance {
 
