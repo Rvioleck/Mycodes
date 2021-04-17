@@ -40,8 +40,8 @@ public class FloodFill {
         };
         image = new FloodFill().floodFill(image, 1, 1, 1);
         for (int[] ints : image) {
-            for (int j = 0; j < ints.length; j++) {
-                System.out.print(ints[j] + " ");
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * https://leetcode-cn.com/problems/course-schedule-ii/
+ */
 public class FindOrder {
     // dfs实现拓扑排序，并且输出拓扑结果
 
@@ -13,8 +16,7 @@ public class FindOrder {
 
     private void dfs(int v, int[][] prerequisites) {
         vis[v] = 1;   // vis = 1, v is under searching.
-        for (int[] prerequisite :
-                prerequisites) {
+        for (int[] prerequisite : prerequisites) {
             if (prerequisite[0] == v) {
                 if (vis[prerequisite[1]] == 0) {  // vis = 0, v has not been searched, keep traversing adjacent nodes.
                     dfs(prerequisite[1], prerequisites);
@@ -25,7 +27,7 @@ public class FindOrder {
             }
         }
         vis[v] = 2;   // vis = 2, v has been searched
-        list.add(list.size(), v);  // add v to the result sequence
+        list.add(v);  // add v to the result sequence
     }
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {

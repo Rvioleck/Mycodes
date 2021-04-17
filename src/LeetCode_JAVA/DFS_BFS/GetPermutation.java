@@ -1,5 +1,8 @@
 package LeetCode_JAVA.DFS_BFS;
 
+/**
+ * https://leetcode-cn.com/problems/permutation-sequence/
+ */
 public class GetPermutation {
     private int n, k;
     int[] fact = new int[]{1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
