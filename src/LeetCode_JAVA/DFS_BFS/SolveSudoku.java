@@ -21,9 +21,7 @@ public class SolveSudoku {
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
         };
         new SolveSudoku().solveSudoku(board);
-        for (char[] line : board) {
-            System.out.println(Arrays.toString(line));
-        }
+        System.out.println(Arrays.deepToString(board));
     }
 
     public void solveSudoku(char[][] board) {

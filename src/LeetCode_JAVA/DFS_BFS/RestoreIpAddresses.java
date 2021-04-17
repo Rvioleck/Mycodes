@@ -14,7 +14,7 @@ public class RestoreIpAddresses {
     int n;
 
     public static void main(String[] args) {
-        String s = "192.168@1.1";
+        String s = "25525511135";
         System.out.println(new RestoreIpAddresses().restoreIpAddresses(s));
     }
 
