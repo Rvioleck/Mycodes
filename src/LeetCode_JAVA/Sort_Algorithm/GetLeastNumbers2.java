@@ -2,7 +2,7 @@ package LeetCode_JAVA.Sort_Algorithm;
 
 import java.util.PriorityQueue;
 
-public class GetLeaseNumbers2 {
+public class GetLeastNumbers2 {
 
     public int[] getLeastNumbers(int[] arr, int k) {
         if (k == 0 || arr.length == 0) {

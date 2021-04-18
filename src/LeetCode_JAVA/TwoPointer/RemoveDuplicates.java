@@ -1,25 +1,49 @@
 package LeetCode_JAVA.TwoPointer;
 
-/**
- * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/
- * 给你一个有序数组nums，请你 原地 删除重复出现的元素，使每个元素 最多出现两次 ，返回删除后数组的新长度。
- */
-public class RemoveDuplicates {
+import org.junit.Test;
 
-    public int removeDuplicates(int[] nums) {
-        int p = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i <= 2 || nums[i] != nums[p - 2]) {
-                nums[p] = nums[i];
-                p++;
+public class RemoveDuplicates {
+    public String removeDuplicates(String S) {
+        StringBuilder sb = new StringBuilder();
+        int sbLength = 0;
+        for (char character : S.toCharArray()) {
+            if (sbLength != 0 && character == sb.charAt(sbLength - 1))
+                sb.deleteCharAt(sbLength-- - 1);
+            else {
+                sb.append(character);
+                sbLength++;
             }
         }
-        return p;
+        return sb.toString();
     }
 
-    public static void main(String[] args) {
-        int[] nums = new int[]{0, 0, 1, 1, 1, 1, 2, 3, 3};
-        System.out.println(new RemoveDuplicates().removeDuplicates(nums));
+    /**
+     * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+     * @param nums 待去重数组
+     * @return 排序后无重复元素的下标终点
+     */
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        if (n <= 1){
+            return n;
+        }
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (j < 1 || nums[i] != nums[i - 1]) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
     }
 
+
+    @Test
+    public void test() {
+//        String s = "abbaca";
+        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int n = removeDuplicates(nums);
+        for (int i = 0; i < n; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
 }

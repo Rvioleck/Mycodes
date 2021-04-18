@@ -27,11 +27,7 @@ public class MergeSort {
         }
         int i = left, j = mid + 1;
         for (int k = left; k <= right; k++) {
-            if (i > mid) {
-                nums[k] = temp[j++];
-            } else if (j > right) {
-                nums[k] = temp[i++];
-            } else if (temp[i] <= temp[j]) {
+            if (j > right || temp[i] <= temp[j]) {
                 nums[k] = temp[i++];
             } else {
                 nums[k] = temp[j++];
