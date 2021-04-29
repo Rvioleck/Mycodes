@@ -33,7 +33,7 @@ public class MinPathSum {
         return dp[m - 1][n - 1];
     }
 
-    public int minPathSum_optimise(int[][] grid){
+    public int minPathSum_optimise(int[][] grid) {
         int m = grid.length, n = grid[0].length;
         int[] dp = new int[n];
         dp[0] = grid[0][0];

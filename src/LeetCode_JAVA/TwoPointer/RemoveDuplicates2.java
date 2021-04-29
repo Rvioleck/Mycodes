@@ -16,14 +16,14 @@ public class RemoveDuplicates2 {
         return p;
     }
 
-    public int removeDuplicatesK(int[] nums, int k){
+    public int removeDuplicatesK(int[] nums, int k) {
         // 由于是保留 k 个相同数字，对于前 k 个数字，我们可以直接保留。
         // 对于后面的任意数字，能够保留的前提是：与当前写入的位置前面的第 k 个元素进行比较，不相同则保留。
         int n = nums.length;
         if (n <= 1) return n;
         int idx = 0;
         for (int i = 0; i < n; i++) {
-            if (idx < k || nums[idx - k] != nums[i]){
+            if (idx < k || nums[idx - k] != nums[i]) {
                 nums[idx++] = nums[i];
             }
         }

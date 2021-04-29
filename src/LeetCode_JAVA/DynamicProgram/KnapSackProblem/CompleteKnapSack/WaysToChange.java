@@ -16,12 +16,12 @@ public class WaysToChange {
         int[] coins = {1, 5, 10, 25};
         int[][] dp = new int[5][n + 1];
         dp[0][0] = 1;
-        for (int i = 1; i <= 4; i++){
+        for (int i = 1; i <= 4; i++) {
             dp[i][0] = 1;
             int coin = coins[i - 1];
-            for (int j = 0; j <= n; j++){
+            for (int j = 0; j <= n; j++) {
                 if (j >= coin)
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - coin] % 1000000007 ;
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - coin] % 1000000007;
                 else
                     dp[i][j] = dp[i - 1][j];
             }
@@ -29,7 +29,7 @@ public class WaysToChange {
         return dp[4][n] % 1000000007;
     }
 
-    public int waysToChange_optimise(int n){
+    public int waysToChange_optimise(int n) {
         int[] coins = {1, 5, 10, 25};
         int[] dp = new int[n + 1];
         dp[0] = 1;
@@ -38,6 +38,6 @@ public class WaysToChange {
                 dp[j] = (dp[j] + dp[j - coin]) % 1000000007;
             }
         }
-        return dp[n] ;
+        return dp[n];
     }
 }

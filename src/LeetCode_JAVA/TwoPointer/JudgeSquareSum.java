@@ -11,12 +11,12 @@ public class JudgeSquareSum {
     }
 
     public boolean judgeSquareSum(int c) {
-        int left = 0, right = (int)Math.sqrt(c);
-        while (left <= right){
+        int left = 0, right = (int) Math.sqrt(c);
+        while (left <= right) {
             int sum = left * left + right * right;
-            if (sum == c){
+            if (sum == c) {
                 return true;
-            } else if (sum > c){
+            } else if (sum > c) {
                 right--;
             } else left++;
         }

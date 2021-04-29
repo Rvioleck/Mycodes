@@ -19,12 +19,13 @@ public class RemoveDuplicates {
 
     /**
      * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+     *
      * @param nums 待去重数组
      * @return 排序后无重复元素的下标终点
      */
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
-        if (n <= 1){
+        if (n <= 1) {
             return n;
         }
         int j = 0;
