@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SelfDividingNumbers {
     public List<Integer> selfDividingNumbers(int left, int right) {
-        List list = new ArrayList();
+        List<Integer> list = new ArrayList<>();
         for (int i = left; i <= right; i++) {
             if (isDividing(i)) {
                 list.add(i);
@@ -31,6 +31,6 @@ public class SelfDividingNumbers {
     @Test
     public void test() {
         int num = 10;
-        System.out.println(isDividing(num));
+        System.out.println(selfDividingNumbers(1, 22));
     }
 }
