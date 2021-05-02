@@ -2,6 +2,9 @@ package LeetCode_JAVA.HashTable;
 
 import java.util.*;
 
+/**
+ * https://leetcode-cn.com/problems/brick-wall/
+ */
 public class LeastBricks {
 
     public static void main(String[] args) {
