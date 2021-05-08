@@ -3,7 +3,7 @@ package LeetCode_JAVA.DFS_BFS;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class FloodFill {
+public class FloodFill_BFS {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int color = image[sr][sc];
         if (color == newColor) {
@@ -38,7 +38,7 @@ public class FloodFill {
                 {0, 0, 0},
                 {0, 1, 1},
         };
-        image = new FloodFill().floodFill(image, 1, 1, 1);
+        image = new FloodFill_BFS().floodFill(image, 1, 1, 1);
         for (int[] ints : image) {
             for (int anInt : ints) {
                 System.out.print(anInt + " ");
