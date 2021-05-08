@@ -9,14 +9,16 @@ package LeetCode_JAVA.DFS_BFS.MinimumTimeRequired;
  * 请你设计一套最佳的工作分配方案，使工人的 最大工作时间 得以 最小化 。
  * 返回分配方案中尽可能 最小 的 最大工作时间 。
  *
- * 朴素方法 ：TLE
+ * 优化方法：优先分配没有任务的工人
+ * 本递归树还是那棵递归树，本质上，我们并没有主动的否决某些方案（也就是我们并没有改动递归树）
+ * 我们只是调整了搜索顺序来剪枝掉了一些「必然不是最优」的搜索路径。
  */
-public class NaiveApproach {
+public class OptimiseApproach {
 
     public static void main(String[] args) {
         int[] jobs = {1,2,4,7,8};
         int k = 2;
-        System.out.println(new NaiveApproach().minimumTimeRequired(jobs, k));
+        System.out.println(new OptimiseApproach().minimumTimeRequired(jobs, k));
     }
 
     int n, k;
@@ -33,7 +35,7 @@ public class NaiveApproach {
         n = jobs.length;
         k = _k;
         int[] sum = new int[k];
-        dfs(0, sum, 0);
+        dfs(0, sum, 0, 0);
         return ans;
     }
 
@@ -42,15 +44,19 @@ public class NaiveApproach {
      * @param sum 工人分配的情况sum[i]表示第i个员工的工作量
      * @param max 当前的[最大工作时间]
      */
-    public void dfs(int u, int[] sum, int max){
-        if (max > ans) return;
+    public void dfs(int u, int[] sum, int max, int used){
         if (u == n){
-            ans = max;
+            ans = Math.min(max, ans);
             return;
         }
-        for (int i = 0; i < k; i++) {
+        if (used < k){
+            sum[used] += jobs[u];
+            dfs(u + 1, sum, Math.max(max, sum[used]), used + 1);
+            sum[used] -= jobs[u];
+        }
+        for (int i = 0; i < used; i++) {
             sum[i] += jobs[u];
-            dfs(u + 1, sum, Math.max(max, sum[i]));
+            dfs(u + 1, sum, Math.max(max, sum[i]), used);
             sum[i] -= jobs[u];
         }
     }
