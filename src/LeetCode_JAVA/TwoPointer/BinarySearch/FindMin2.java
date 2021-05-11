@@ -9,11 +9,11 @@ package LeetCode_JAVA.TwoPointer.BinarySearch;
  * 注意，数组 [a[0], a[1], a[2], ..., a[n-1]] 旋转一次 的结果为数组 [a[n-1], a[0], a[1], a[2], ..., a[n-2]] 。
  * 给你一个可能存在 重复 元素值的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
  */
-public class FinMin2 {
+public class FindMin2 {
 
     public static void main(String[] args) {
         int[] nums = {2, 2, 2, 0, 1};
-        System.out.println(new FinMin2().findMin(nums));
+        System.out.println(new FindMin2().findMin(nums));
     }
 
     public int findMin(int[] nums) {

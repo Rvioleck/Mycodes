@@ -15,22 +15,6 @@ public class MySqrt {
         return low;
     }
 
-    public int mySqrt1(int x) {
-        if (x == 0) {
-            return 0;
-        }
-        int ans = (int) Math.exp(0.5 * Math.log(x));
-        return (long) (ans + 1) * (ans + 1) <= x ? ans + 1 : ans;
-
-//        if (x == 0 || x == 1){
-//            return x;
-//        }
-//        int result, i;
-//        for (i = 1; i * i <= x; i++);
-//        result = i - 1;
-//        return result;
-    }
-
     public int mySqrt2(int x) {
         if (x == 0) {
             return 0;
@@ -42,7 +26,7 @@ public class MySqrt {
         while (left < right) {
             // 注意：这里一定取右中位数，如果取左中位数，代码会进入死循环
             // long mid = left + (right - left + 1) / 2;
-            long mid = (left + right + 1) >>> 1;
+            long mid = left + right + 1 >> 1;
             long square = mid * mid;
             if (square > x) {
                 right = mid - 1;
