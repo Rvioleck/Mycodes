@@ -1,4 +1,4 @@
-package LeetCode_JAVA;
+package LeetCode_JAVA.Greedy_Algorithm;
 
 import org.junit.Test;
 
