@@ -2,6 +2,9 @@ package LeetCode_JAVA.Sort_Algorithm;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
+ */
 public class GetLeastNumbers {
 
     public int[] getLeastNumbers(int[] arr, int k) {

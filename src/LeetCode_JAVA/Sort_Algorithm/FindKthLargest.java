@@ -24,6 +24,7 @@ public class FindKthLargest {
         int temp = nums[i];
         nums[i] = nums[left];
         nums[left] = temp;
+        // 后续与原方法相同
         int pivot = nums[left];
         while (left < right) {
             while (left < right && nums[right] <= pivot) {
