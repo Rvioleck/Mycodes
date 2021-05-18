@@ -7,11 +7,11 @@ public class ShellSort {
     public static void main(String[] args) {
         int[] nums = {49, 38, 65, 97, 76, 13, 27, 49};
         System.out.println("Before: " + Arrays.toString(nums));
-        new ShellSort().insertSort(nums);
+        new ShellSort().shellSort(nums);
         System.out.println("After: " + Arrays.toString(nums));
     }
 
-    public void insertSort(int[] nums){
+    public void shellSort(int[] nums){
         int i, j;
         // 初值i = 1表示已维护好的序列默认有一个元素nums[0]
         for (int d = nums.length / 2; d >= 1; d /= 2){

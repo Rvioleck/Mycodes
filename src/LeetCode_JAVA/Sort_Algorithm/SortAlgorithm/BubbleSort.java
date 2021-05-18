@@ -7,11 +7,11 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] nums = {49, 38, 65, 97, 76, 13, 27, 49};
         System.out.println("Before: " + Arrays.toString(nums));
-        new BubbleSort().insertSort(nums);
+        new BubbleSort().bubbleSort(nums);
         System.out.println("After: " + Arrays.toString(nums));
     }
 
-    public void insertSort(int[] nums){
+    public void bubbleSort(int[] nums){
         for (int i = 0; i < nums.length - 1; ++i){
             boolean flag = false;     // 表示本次冒泡排序是否发生交换(优化传统冒泡)
             for (int j = nums.length - 1; j > i; --j){
