@@ -8,7 +8,7 @@ public class BinarySearchTemplate {
     }
 
     public void template1(){
-        long l = 0, r = 1000009;
+        long l = 0, r = 1000009; // [l, r)
         while (l < r) {
             long mid = l + r >> 1;
             if (check(mid)) {
@@ -20,13 +20,25 @@ public class BinarySearchTemplate {
     }
 
     public void template2(){
-        long l = 0, r = 1000009;
+        long l = 0, r = 1000009; // [l, r)
         while (l < r) {
             long mid = l + r + 1 >> 1;
             if (check(mid)) {
                 l = mid;
             } else {
                 r = mid - 1;
+            }
+        }
+    }
+
+    public void template3(){
+        long l = 0, r = 1000009; // [l, r]
+        while (l <= r){
+            long mid = l + r >> 1;
+            if (check(mid)){
+                r = mid - 1;
+            } else {
+                l = mid + 1;
             }
         }
     }
