@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] nums = {49, 38, 65, 97, 76, 13, 27, 49};
+        int[] nums = {1,5,2,3,4,7,6,1,2,5};
         System.out.println("Before: " + Arrays.toString(nums));
         new HeapSort().heapSort(nums);
         System.out.println("After: " + Arrays.toString(nums));
@@ -29,16 +29,15 @@ public class HeapSort {
      */
     public void headAdjust(int[] nums, int k, int len){
         int temp = nums[k];  // 保存根元素副本
-        for (int i = 2 * k; i < len; i *= 2){
-            i++; // 子结点为2k+1和2k+2，因此此时i=2k+1指向左子结点
+        for (int i = 2 * k + 1; i < len; i = i * 2 + 1){
+            // 结点k的左子结点为2 * i + 1
             if (i + 1 < len && nums[i] < nums[i + 1]){
                 // 如果右子结点存在且右子结点更大，则指向右子结点
                 i++;
             }
             // 如果原根结点大于较大的右子结点，无需调整
             if (temp > nums[i]) break;
-            else {
-                // 否则将较大结点替换原根结点，并更新k值(将原根结点向下换)
+            else { // 否则将较大结点替换原根结点，并更新k值(将原根结点向下换)
                 nums[k] = nums[i];
                 k = i;
             }
@@ -58,7 +57,7 @@ public class HeapSort {
             // (此时有效长度就要需要排除已经交换到队尾的最大值)
             // 因为最大值元素在逻辑上，移除了堆输出
             // 但在物理存储上，仍然在该序列的序列后方(顺序排序大值在后)
-            headAdjust(nums, 0, i - 1);
+            headAdjust(nums, 0, i);
         }
     }
 
