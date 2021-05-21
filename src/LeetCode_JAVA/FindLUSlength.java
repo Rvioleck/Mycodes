@@ -5,7 +5,7 @@ public class FindLUSlength {
         if (a.equals(b)) {
             return -1;
         } else {
-            return a.length() > b.length() ? a.length() : b.length();
+            return Math.max(a.length(), b.length());
         }
     }
 }
