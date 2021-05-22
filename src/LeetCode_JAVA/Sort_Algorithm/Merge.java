@@ -26,13 +26,15 @@ public class Merge {
         if (intervals.length == 0){
             return new int[0][];
         }
+        // 按区间左边界进行排序
         Arrays.sort(intervals, (Comparator.comparingInt(o -> o[0])));
         List<int[]> res = new ArrayList<>();
         for (int[] interval : intervals) {
             int l = interval[0], r = interval[1];
+            // 如果当前区间的左区间大于已经合并过的区间的最优区间，则一定为新区间
             if (res.size() == 0 || res.get(res.size() - 1)[1] < l) {
                 res.add(new int[]{l, r});
-            } else {
+            } else { // 否则则选择更大的右区间合并到已经合并区间中的最右区间中
                 res.get(res.size() - 1)[1] = Math.max(r, res.get(res.size() - 1)[1]);
             }
         }
