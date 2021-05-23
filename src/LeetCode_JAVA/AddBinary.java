@@ -14,11 +14,7 @@ public class AddBinary {
             if (b.charAt(i) == '1')
                 bnum += Math.pow(2, b.length() - i - 1);
         }
-        String result = Integer.toBinaryString(anum + bnum);
-        if (result.length() > 32)
-            return result.substring(0, 33);
-        else
-            return result;
+        return Integer.toBinaryString(anum + bnum);
     }
 
     @Test
