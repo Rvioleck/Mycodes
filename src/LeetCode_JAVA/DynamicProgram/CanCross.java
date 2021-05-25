@@ -14,26 +14,26 @@ package LeetCode_JAVA.DynamicProgram;
 public class CanCross {
 
     public static void main(String[] args) {
-        int[] stones = {0,1,2,3,4,8,9,11};
+        int[] stones = {0, 1, 2, 3, 4, 8, 9, 11};
         System.out.println(new CanCross().canCross(stones));
     }
 
     public boolean canCross(int[] stones) {
         // dp[i][k] 表示青蛙能否达到「现在所处的石子编号」为 i 且「上一次跳跃距离」为 k 的状态。
         int n = stones.length;
-        for (int i = 1; i < n; ++i){
-            if (stones[i] - stones[i - 1] > i){
+        for (int i = 1; i < n; ++i) {
+            if (stones[i] - stones[i - 1] > i) {
                 return false;
             }
         }
         boolean[][] dp = new boolean[n][n];
         dp[0][0] = true;
-        for (int i = 1; i < n; ++i){
-            for (int j = i - 1; j >= 0; --j){
+        for (int i = 1; i < n; ++i) {
+            for (int j = i - 1; j >= 0; --j) {
                 int k = stones[i] - stones[j];
                 if (k > j + 1) break;
                 dp[i][k] = dp[j][k] || dp[j][k - 1] || dp[j][k + 1];
-                if (i == n - 1 && dp[i][k]){
+                if (i == n - 1 && dp[i][k]) {
                     return true;
                 }
             }

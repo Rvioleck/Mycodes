@@ -10,7 +10,7 @@ package LeetCode_JAVA.DynamicProgram.Rob;
 public class DeleteAndEarn {
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2,2,3,3,3,4};
+        int[] nums = new int[]{2, 2, 3, 3, 3, 4};
         System.out.println(new DeleteAndEarn().deleteAndEarn(nums));
     }
 
