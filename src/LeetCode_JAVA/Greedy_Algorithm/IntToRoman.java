@@ -6,7 +6,7 @@ public class IntToRoman {
         int num = 1943;
         System.out.println(new IntToRoman().intToRoman(num));
     }
-    
+
     public String intToRoman(int num) {
         String[] roman = new String[]{
                 "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
@@ -16,8 +16,8 @@ public class IntToRoman {
         };
         StringBuilder res = new StringBuilder();
         int i = 0;
-        while (num != 0){
-            while (num < value[i]){
+        while (num != 0) {
+            while (num < value[i]) {
                 ++i;
             }
             num -= value[i];
