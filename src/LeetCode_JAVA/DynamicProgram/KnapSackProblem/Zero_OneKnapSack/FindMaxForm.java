@@ -19,8 +19,8 @@ public class FindMaxForm {
     public int findMaxForm(String[] strs, int m, int n) {
         int[][] dp = new int[m + 1][n + 1];
         for (String str : strs) {
-            int zero = 0, one = 0;
-            for (int i = 0; i < str.length(); i++) {
+            int zero = 0, one = 0, len = str.length();
+            for (int i = 0; i < len; i++) {
                 if (str.charAt(i) == '0') {
                     zero++;
                 } else {
