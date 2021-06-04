@@ -57,7 +57,7 @@ public class OptimiseApproach2 {
             return;
         }
         Arrays.sort(sum = sum.clone());
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++) { // 每次将最大
             if (i > 0 && sum[i] == sum[i - 1]) continue;
             sum[i] += jobs[u];
             dfs(u - 1, sum, Math.max(max, sum[i]));
