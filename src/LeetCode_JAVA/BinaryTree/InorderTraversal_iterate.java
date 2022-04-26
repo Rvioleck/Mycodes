@@ -5,19 +5,20 @@ import java.util.List;
 import java.util.Stack;
 
 public class InorderTraversal_iterate {
-    private final List<Integer> res = new ArrayList<>();
 
     public List<Integer> inOrderTraversal(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode node = root;
-        while (node != null || !stack.isEmpty()) {
-            if (node != null) {
-                stack.push(node);
-                node = node.left;
-            } else {
-                node = stack.pop();
-                res.add(node.val);
-                node = node.right;
+        List<Integer> res = new ArrayList<>();
+        if (root != null){
+            Stack<TreeNode> stack = new Stack<>();
+            while (!stack.isEmpty() || root != null){
+                if (root != null){  // 当前树非空，左树进栈
+                    stack.push(root);
+                    root = root.left;
+                } else {  // 当前树为空，弹栈输出，右树进栈
+                    root = stack.pop(); // 左
+                    res.add(root.val);  // 中
+                    root = root.right;  // 右
+                }
             }
         }
         return res;

@@ -1,7 +1,14 @@
 package LeetCode_JAVA.BinaryTree;
 
+import java.util.Stack;
+
 public class IsValidBST {
     long pre = Long.MIN_VALUE;
+
+    public static void main(String[] args) {
+        TreeNode t = TreeNode.create("[0]");
+        System.out.println(new IsValidBST().isValidBST(t));
+    }
 
     public boolean isValidBST(TreeNode root) {
         if (root == null) {
@@ -18,6 +25,24 @@ public class IsValidBST {
         pre = root.val;
         // 访问右子树
         return isValidBST(root.right);
+    }
+
+    public boolean isValidBST1(TreeNode root) {
+        if (root == null) return true;
+        long preVal = Long.MIN_VALUE;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null){
+            if (root != null){
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                if (preVal >= root.val) return false;
+                preVal = (long) root.val;
+                root = root.right;
+            }
+        }
+        return true;
     }
 
 //    public boolean isValidBST(TreeNode root) {

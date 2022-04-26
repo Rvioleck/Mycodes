@@ -3,6 +3,9 @@ package LeetCode_JAVA.Sort_Algorithm;
 import java.util.Arrays;
 
 public class SortColors {
+    /**
+    * https://leetcode-cn.com/problems/sort-colors/
+    */
 
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
@@ -11,14 +14,18 @@ public class SortColors {
     }
 
     public void sortColors(int[] nums) {
-        int n = nums.length;
-        int red = 0, blue = n - 1;
-        for (int i = 0; i < blue; i++) {
-            while (i <= blue && nums[i] == 2) { // 直到尾部不是2停止
-                swap(nums, i, blue--);
-            }
-            if (nums[i] == 0) {
-                swap(nums, i, red++);
+        // [0, left]记录0， [right, end]记录2
+        int left = -1, right = nums.length;
+        int i = 0;
+        while (i < right){ // 当i遍历到right时停止，此时右侧全是2
+            if (nums[i] == 0){
+                // 扩大left域，并将0交换进来，继续向下走
+                swap(nums, i++, ++left);
+            } else if (nums[i] == 1){
+                i++;  // 中间域全是1，直接走
+            } else if (nums[i] == 2){
+                // 左扩right域，将2交换进来，交换出来的值继续遍历
+                swap(nums, i, --right);
             }
         }
     }

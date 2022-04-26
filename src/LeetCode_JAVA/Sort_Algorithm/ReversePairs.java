@@ -1,44 +1,34 @@
 package LeetCode_JAVA.Sort_Algorithm;
 
 public class ReversePairs {
+    /*
+    https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/
+     */
 
     public int reversePairs(int[] nums) {
-        int len = nums.length;
-        if (len < 2) {
-            return 0;
-        }
-        int[] temp = new int[len];
-        return reversePairs(nums, 0, len - 1, temp);
+        if (nums.length == 0) return 0;
+        return mergeSort(nums, 0, nums.length - 1);
     }
 
-    private int reversePairs(int[] nums, int left, int right, int[] temp) {
+    public int mergeSort(int[] nums, int left, int right){
         if (left == right) return 0;
-        int mid = left - (left - right) / 2;
-        int leftPairs = reversePairs(nums, left, mid, temp);
-        int rightPairs = reversePairs(nums, mid + 1, right, temp);
-        int crossPairs = mergePairs(nums, left, mid, right, temp);
-        return leftPairs + rightPairs + crossPairs;
+        int mid = left + ((right - left) >> 1);
+        return mergeSort(nums, left, mid) +  mergeSort(nums, mid + 1, right) + merge(nums, left, mid, right);
     }
 
-    private int mergePairs(int[] nums, int left, int mid, int right, int[] temp) {
-        for (int i = left; i <= right; i++) {
-            temp[i] = nums[i];
+    public int merge(int[] nums, int left, int mid, int right){
+        int[] temp = new int[right - left + 1];
+        for (int i = left; i <= right; ++i) temp[i - left] = nums[i];
+        int pairs = 0, i = left, j = mid + 1, k = left;
+        while (i <= mid && j <= right){
+            if (temp[i - left] > temp[j - left]){
+                pairs += mid - i + 1;
+                nums[k++] = temp[j++ - left];
+            } else nums[k++] = temp[i++ - left];
         }
-        int i = left, j = mid + 1;
-        int count = 0;
-        for (int k = left; k <= right; k++) {
-            if (i > mid) {
-                nums[k] = temp[j++];
-            } else if (j > right) {
-                nums[k] = temp[i++];
-            } else if (temp[i] <= temp[j]) {
-                nums[k] = temp[i++];
-            } else {
-                nums[k] = temp[j++];
-                count += mid - i + 1;
-            }
-        }
-        return count;
+        while (i <= mid) nums[k++] = temp[i++ - left];
+        while (j <= right) nums[k++] = temp[j++ - left];
+        return pairs;
     }
 
     public static void main(String[] args) {

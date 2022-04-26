@@ -6,11 +6,11 @@ package LeetCode_JAVA.BitwiseOperation;
  */
 public class SingleNumber {
     public int singleNumber(int[] nums) {
-        int single = 0;
+        int eor = 0;
         for (int num : nums) {
-            single ^= num;
+            eor ^= num;
         }
-        return single;
+        return eor;
     }
 
     public static void main(String[] args) {

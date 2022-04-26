@@ -1,4 +1,4 @@
-package LeetCode_JAVA.Greedy_Algorithm;
+package LeetCode_JAVA.GreedyAlgorithm;
 
 /**
  * https://leetcode-cn.com/problems/ugly-number-ii/solution/chou-shu-ii-by-leetcode-solution-uoqd/

@@ -1,4 +1,4 @@
-package LeetCode_JAVA.Greedy_Algorithm;
+package LeetCode_JAVA.GreedyAlgorithm;
 
 /**
  * https://leetcode-cn.com/problems/gas-station/
