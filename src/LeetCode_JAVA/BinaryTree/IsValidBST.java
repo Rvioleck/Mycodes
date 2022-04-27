@@ -28,6 +28,7 @@ public class IsValidBST {
     }
 
     public boolean isValidBST1(TreeNode root) {
+        // 非递归实现
         if (root == null) return true;
         long preVal = Long.MIN_VALUE;
         Stack<TreeNode> stack = new Stack<>();
@@ -43,6 +44,40 @@ public class IsValidBST {
             }
         }
         return true;
+    }
+
+    /*
+       树形dp套路实现
+     */
+
+    public static class ReturnData{
+        public boolean isBST;
+        public int max;
+        public int min;
+
+        ReturnData(boolean isB, int max, int min){
+            this.isBST = isB;
+            this.max = max;
+            this.min = min;
+        }
+
+    }
+
+    public boolean isValidBST2(TreeNode root) {
+        return process(root).isBST;
+    }
+
+    public ReturnData process(TreeNode root){
+        if (root == null){
+            return null;
+        }
+        ReturnData leftData = process(root.left);
+        ReturnData rightData = process(root.right);
+        int max = rightData != null ? Math.max(root.val, rightData.max) : root.val;
+        int min = leftData != null ? Math.min(root.val, leftData.min) : root.val;
+        boolean isBST = (leftData == null || (leftData.isBST && leftData.max < root.val)) &&
+                (rightData == null || (rightData.isBST && rightData.min > root.val));
+        return new ReturnData(isBST, max, min);
     }
 
 //    public boolean isValidBST(TreeNode root) {

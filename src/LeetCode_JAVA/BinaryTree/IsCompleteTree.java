@@ -29,6 +29,30 @@ public class IsCompleteTree {
         return true;
     }
 
+    public boolean isCompleteTree2(TreeNode root) {
+        if (root != null){
+            boolean tag = false;
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()){
+                root = queue.poll();
+                if (root.left == null && root.right != null || tag && root.left != null){
+                    return false;
+                }
+                if (root.left != null){
+                    queue.offer(root.left);
+                }
+                if (root.right != null){
+                    queue.offer(root.right);
+                }
+                if (root.left == null || root.right == null){
+                    tag = true;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println(new IsCompleteTree().isCompleteTree(TreeNode.create("[1,2,3,4,5,6]")));
     }
