@@ -1,4 +1,4 @@
-package LeetCode_JAVA.DFS_BFS;
+package LeetCode_JAVA.DFS_BFS.StringPermutation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class Permutation {
         StringBuffer path = new StringBuffer();
         boolean[] vis = new boolean[S.length()];
         dfs(S, path, res, vis);
-        return res.toArray(new String[res.size()]);
+        return res.toArray(new String[0]);
     }
 
     public static void main(String[] args) {

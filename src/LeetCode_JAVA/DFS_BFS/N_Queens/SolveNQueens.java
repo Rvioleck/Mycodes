@@ -1,4 +1,4 @@
-package LeetCode_JAVA.DFS_BFS;
+package LeetCode_JAVA.DFS_BFS.N_Queens;
 
 import java.util.ArrayList;
 import java.util.List;

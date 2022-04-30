@@ -1,4 +1,4 @@
-package LeetCode_JAVA.DFS_BFS;
+package LeetCode_JAVA.DFS_BFS.StringPermutation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
