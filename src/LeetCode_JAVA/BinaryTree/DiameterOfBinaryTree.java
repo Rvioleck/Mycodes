@@ -24,4 +24,28 @@ public class DiameterOfBinaryTree {
         System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTree(t));
     }
 
+    class Info{
+        public int height;
+        public int diameter;
+        public Info(int hei, int dia){
+            height = hei;
+            diameter = dia;
+        }
+
+    }
+
+    public int diameterOfBinaryTree2(TreeNode root) {
+        if (root == null) return 0;
+        return maxDiameter(root).diameter;
+    }
+
+    public Info maxDiameter(TreeNode root){
+        if (root == null) return new Info(0, 0);
+        Info left = maxDiameter(root.left);
+        Info right = maxDiameter(root.right);
+        int childDiameter = Math.max(left.diameter, right.diameter);
+        return new Info(Math.max(left.height, right.height) + 1,
+                Math.max(left.height + right.height, childDiameter));
+    }
+
 }

@@ -56,5 +56,44 @@ public class LongestPalindrome2 {
         }
         return s.substring(begin, begin + maxLen);
     }
+
+    // Manacher算法思路
+    public String longestPalindrome2(String s) {
+        if (s == null || s.length() <= 1) return s;
+        char[] str = getChars(s);
+        int[] pArr = new int[str.length];
+        int C = -1, R = -1;
+        int maxR = Integer.MIN_VALUE, maxC = Integer.MIN_VALUE;
+        for (int i = 0; i < str.length; ++i){
+            pArr[i] = R > i ? Math.min(R - i, pArr[2 * C - i]) : 1;
+            while (i - pArr[i] >= 0 && i + pArr[i] < str.length && str[i - pArr[i]] == str[i + pArr[i]]){
+                pArr[i]++;
+            }
+            if (i + pArr[i] > R){
+                R = i + pArr[i];
+                C = i;
+            }
+            if (pArr[i] > maxR){
+                maxR = pArr[i];
+                maxC = i;
+            }
+        }
+        char[] res = new char[maxR - 1];
+        int index = maxC - maxR + 2;
+        for (int i = 0; i < res.length; ++i){
+            res[i] = str[index];
+            index += 2;
+        }
+        return String.valueOf(res);
+    }
+
+    public char[] getChars(String s){
+        char[] chars = new char[s.length() * 2 + 1];
+        int index = 0;
+        for (int i = 0; i < chars.length; ++i){
+            chars[i] = ((i & 1) == 0) ? '#' : s.charAt(index++);
+        }
+        return chars;
+    }
 }
 
