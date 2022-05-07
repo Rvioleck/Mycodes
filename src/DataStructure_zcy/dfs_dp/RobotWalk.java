@@ -3,6 +3,7 @@ package DataStructure_zcy.dfs_dp;
 import org.junit.Test;
 
 public class RobotWalk {
+    // leetcode 688
 
     /**
      * @param N 行走范围1~N
@@ -27,7 +28,7 @@ public class RobotWalk {
 
     @Test
     public void dfs_test(){
-        System.out.println(dfs(5, 4, 4, 2));
+        System.out.println(dfs(10, 4, 8, 2));
     }
 
     /**
@@ -66,6 +67,39 @@ public class RobotWalk {
             }
         }
         System.out.println(dfs_dp(N, E, rest, 2, dp));
+    }
+
+    /**
+     * @param N 行走范围1~N
+     * @param E 行走终点E
+     * @param rest 剩余步数rest
+     * @param cur 当前的位置cur
+     * @return 从cur走到E的总路径数
+     * 时间复杂度O(N*K)
+     */
+    public int dp(int N, int E, int rest, int cur){
+        int[][] f = new int[rest + 1][N + 1];
+        for (int i = 0; i <= N; ++i){
+            f[0][i] = 0;
+        }
+        f[0][E] = 1;
+        for (int i = 1; i <= rest; ++i){
+            for (int j = 1; j <= N; ++j){
+                if (j == 1){
+                    f[i][1] = f[i - 1][2];
+                } else if (j == N){
+                    f[i][N] = f[i - 1][N - 1];
+                } else {
+                    f[i][j] = f[i - 1][j - 1] + f[i - 1][j + 1];
+                }
+            }
+        }
+        return f[rest][cur];
+    }
+
+    @Test
+    public void dp_test(){
+        System.out.println(dp(10, 4, 8, 2));
     }
 
 }

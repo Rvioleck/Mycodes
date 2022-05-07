@@ -18,6 +18,39 @@ public class NumTrees {
         return (int) res;
     }
 
+    public int dfs(int n){
+        if (n < 0){
+            return 0;
+        }
+        if (n == 0 || n == 1){
+            return 1;
+        }
+        if (n == 2){
+            return 2;
+        }
+        int res = 0;
+        for (int leftNum = 0; leftNum <= n - 1; ++leftNum){
+            int leftWays = dfs(leftNum);
+            int rightWays = dfs(n - leftNum - 1);
+            res += leftWays + rightWays;
+        }
+        return res;
+    }
+
+    public int numTreesDP(int n){
+        if (n < 2){
+            return 1;
+        }
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= n; ++i){
+            for (int j = 0; j <= i - 1; ++j){
+                dp[i] += dp[j] * dp[i - j - 1];
+            }
+        }
+        return dp[n];
+    }
+
     public static void main(String[] args) {
         System.out.println(new NumTrees().numTrees(4));
     }
